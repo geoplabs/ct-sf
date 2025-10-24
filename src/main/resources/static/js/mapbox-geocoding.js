@@ -24,6 +24,10 @@ class MapboxGeocoding {
         } = options;
 
         try {
+            // Debug logging
+            console.log('MapboxGeocoding: Starting geocode for address:', address);
+            console.log('MapboxGeocoding: Options:', options);
+            
             // Encode the address for URL
             const encodedAddress = encodeURIComponent(address);
             
@@ -33,6 +37,8 @@ class MapboxGeocoding {
                 limit: limit.toString(),
                 types: 'address,place,poi'
             });
+            
+            console.log('MapboxGeocoding: API Key (first 10 chars):', this.apiKey.substring(0, 10) + '...');
 
             // Add optional parameters
             if (country) {
@@ -47,10 +53,17 @@ class MapboxGeocoding {
 
             const url = `${this.baseUrl}${encodedAddress}.json?${params.toString()}`;
             
+            console.log('MapboxGeocoding: Full URL:', url);
+            
             const response = await fetch(url);
             
+            console.log('MapboxGeocoding: Response status:', response.status);
+            console.log('MapboxGeocoding: Response headers:', response.headers);
+            
             if (!response.ok) {
-                throw new Error(`Mapbox API error: ${response.status} ${response.statusText}`);
+                const errorText = await response.text();
+                console.error('MapboxGeocoding: Error response:', errorText);
+                throw new Error(`Mapbox API error: ${response.status} ${response.statusText} - ${errorText}`);
             }
 
             const data = await response.json();
@@ -59,7 +72,7 @@ class MapboxGeocoding {
                 throw new Error('No results found for the given address');
             }
 
-            // Return the first (best) result
+            // Return the first (best) result, but also include all results for potential selection
             const feature = data.features[0];
             const [longitude, latitude] = feature.center;
             
@@ -70,7 +83,15 @@ class MapboxGeocoding {
                 formatted_address: feature.place_name,
                 confidence: this.calculateConfidence(feature),
                 components: this.parseAddressComponents(feature),
-                raw: feature
+                raw: feature,
+                all_results: data.features.map(f => ({
+                    latitude: f.center[1],
+                    longitude: f.center[0],
+                    formatted_address: f.place_name,
+                    confidence: this.calculateConfidence(f),
+                    place_type: f.place_type[0],
+                    relevance: f.relevance
+                }))
             };
 
         } catch (error) {

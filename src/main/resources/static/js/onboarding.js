@@ -68,6 +68,9 @@ document.addEventListener('DOMContentLoaded', function() {
     // Add geocoding functionality
     setupGeocoding();
     
+    // Add city autocomplete functionality
+    setupCityAutocomplete();
+    
     // Overview elements
     const overviewCompanyId = document.getElementById('overview-companyId');
     const overviewLegalName = document.getElementById('overview-legalName');
@@ -123,6 +126,106 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         }
         
+        // Add city autocomplete functionality
+        function setupCityAutocomplete() {
+            let autocompleteTimeout;
+            const autocompleteContainer = document.createElement('div');
+            autocompleteContainer.id = 'cityAutocomplete';
+            autocompleteContainer.className = 'list-group position-absolute w-100 d-none';
+            autocompleteContainer.style.zIndex = '1000';
+            autocompleteContainer.style.maxHeight = '200px';
+            autocompleteContainer.style.overflowY = 'auto';
+            
+            city.parentElement.style.position = 'relative';
+            city.parentElement.appendChild(autocompleteContainer);
+            
+            city.addEventListener('input', function() {
+                const query = this.value.trim();
+                
+                // Clear previous timeout
+                if (autocompleteTimeout) {
+                    clearTimeout(autocompleteTimeout);
+                }
+                
+                if (query.length < 2) {
+                    autocompleteContainer.classList.add('d-none');
+                    return;
+                }
+                
+                // Debounce the API call
+                autocompleteTimeout = setTimeout(() => {
+                    searchCities(query);
+                }, 300);
+            });
+            
+            // Hide autocomplete when clicking outside
+            document.addEventListener('click', function(e) {
+                if (!city.contains(e.target) && !autocompleteContainer.contains(e.target)) {
+                    autocompleteContainer.classList.add('d-none');
+                }
+            });
+        }
+        
+        function searchCities(query) {
+            const mapboxApiKey = 'pk.eyJ1Ijoid2hhdGhvcm9zY29wZSIsImEiOiJjbWV2bGszaDgwZzg5MnhzaG9pOTVzb2tsIn0.hBPbkWRHfL2mY6IRxRKX2g';
+            const geocoder = new MapboxGeocoding(mapboxApiKey);
+            const countryCode = getCountryCode(country.value);
+            
+            geocoder.geocodeAddress(query, {
+                country: countryCode,
+                limit: 5
+            }).then(result => {
+                if (result.success && result.all_results) {
+                    showCityAutocomplete(result.all_results);
+                }
+            }).catch(error => {
+                console.error('City autocomplete error:', error);
+            });
+        }
+        
+        function showCityAutocomplete(cities) {
+            const autocompleteContainer = document.getElementById('cityAutocomplete');
+            autocompleteContainer.innerHTML = '';
+            
+            cities.forEach(cityResult => {
+                const item = document.createElement('button');
+                item.type = 'button';
+                item.className = 'list-group-item list-group-item-action';
+                item.innerHTML = `
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div>
+                            <strong>${cityResult.formatted_address}</strong>
+                            <br><small class="text-muted">${cityResult.place_type}</small>
+                        </div>
+                        <small class="text-muted">${Math.round(cityResult.confidence * 100)}%</small>
+                    </div>
+                `;
+                
+                item.addEventListener('click', function() {
+                    // Extract city name from formatted address
+                    const cityName = cityResult.formatted_address.split(',')[0];
+                    city.value = cityName;
+                    
+                    // Set coordinates immediately
+                    latitude.value = parseFloat(cityResult.latitude).toFixed(6);
+                    longitude.value = parseFloat(cityResult.longitude).toFixed(6);
+                    
+                    // Hide autocomplete
+                    autocompleteContainer.classList.add('d-none');
+                    
+                    // Update geocode button
+                    enableGeocodeButtonIfReady();
+                    
+                    // Show success message
+                    showSuccess(`Coordinates set for: ${cityResult.formatted_address}`);
+                });
+                
+                autocompleteContainer.appendChild(item);
+            });
+            
+            autocompleteContainer.classList.remove('d-none');
+        }
+        
         // Function to geocode address using Mapbox API
         function geocodeAddress() {
             // Show loading state
@@ -143,16 +246,32 @@ document.addEventListener('DOMContentLoaded', function() {
             const searchQuery = parts.join(', ');
             
             // Initialize Mapbox geocoding with API key
-            const mapboxApiKey = 'pHSbj2vjJ+rUprhF2W2B3acz6QCLdEOdFmb1yzuGWPE=';
+            const mapboxApiKey = 'pk.eyJ1Ijoid2hhdGhvcm9zY29wZSIsImEiOiJjbWV2bGszaDgwZzg5MnhzaG9pOTVzb2tsIn0.hBPbkWRHfL2mY6IRxRKX2g';
+            
+            // Debug logging
+            console.log('Starting geocoding for:', searchQuery);
+            console.log('Mapbox API Key format check:', mapboxApiKey.startsWith('pk.') ? 'Valid format' : 'Unusual format - may need correction');
+            
+            // Check if MapboxGeocoding class is available
+            if (typeof MapboxGeocoding === 'undefined') {
+                console.error('MapboxGeocoding class not found! Make sure mapbox-geocoding.js is loaded.');
+                showError('Geocoding service not available. Please refresh the page.');
+                geocodeBtn.innerHTML = originalText;
+                geocodeBtn.disabled = false;
+                return;
+            }
+            
             const geocoder = new MapboxGeocoding(mapboxApiKey);
             
             // Get country code for better results
             const countryCode = getCountryCode(country.value);
+            console.log('Country code:', countryCode);
             
             geocoder.geocodeAddress(searchQuery, {
                 country: countryCode,
-                limit: 1
+                limit: 5  // Get multiple results for user to choose from
             }).then(result => {
+                console.log('Geocoding result:', result);
                 if (result.success && result.latitude && result.longitude) {
                     // Format coordinates to 6 decimal places for precision
                     latitude.value = parseFloat(result.latitude).toFixed(6);
