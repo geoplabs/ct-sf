@@ -9,13 +9,30 @@
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌿</text></svg>">
 </head>
 <body class="bg-light">
+    <!-- Header without Sign Out button -->
+    <header class="auth-header">
+        <div class="container">
+            <div class="d-flex align-items-center">
+                <img src="/images/carbon-tracker-logo.svg" alt="Carbon Tracker Logo" class="brand-logo">
+                <span class="navbar-brand mb-0">
+                    <span class="carbon" style="color: #7CB342;">Carbon</span>
+                    <span class="tracker" style="color: #2c3e50;">Tracker</span>
+                </span>
+            </div>
+        </div>
+    </header>
+
     <div class="container py-5">
         <div class="row justify-content-center">
             <div class="col-md-6">
                 <div class="card shadow">
                     <div class="card-body p-5">
                         <div class="text-center mb-4">
-                            <h2 class="fw-bold text-primary">Carbon Tracker</h2>
+                            <img src="/images/carbon-tracker-logo.svg" alt="Carbon Tracker Logo" class="login-logo">
+                            <h2 class="auth-brand-text">
+                                <span style="color: #7CB342;">Carbon</span> 
+                                <span style="color: #2c3e50;">Tracker</span>
+                            </h2>
                             <p class="text-muted">Sign in to access your account</p>
                         </div>
                         
@@ -46,7 +63,7 @@
                         </form>
                         
                         <div class="text-center mt-4">
-                            <p class="mb-0">Don't have an account? <a href="/signup" class="text-primary">Sign up</a></p>
+                            <p class="mb-0">Don't have an account? <a href="/signup" style="color: #7CB342; text-decoration: none;">Sign up</a></p>
                         </div>
                     </div>
                 </div>

@@ -1,10 +1,10 @@
-/* Global styles - Svante Fourier Theme */
+/* Global styles - Carbon Tracker Theme */
 :root {
-    --primary-color: #2B5A87;        /* Deep blue from Svante Fourier */
-    --primary-dark: #1E3F5F;         /* Darker blue */
+    --primary-color: #7CB342;        /* Vibrant green from Carbon logo */
+    --primary-dark: #689F38;         /* Darker green */
     --secondary-color: #4A90A4;      /* Teal accent */
-    --accent-color: #7FB069;         /* Green accent */
-    --success-color: #28a745;
+    --accent-color: #7FB069;         /* Light green accent */
+    --success-color: #7CB342;        /* Use primary green for success */
     --error-color: #dc3545;
     --warning-color: #ffc107;
     --background-color: #f8f9fa;
@@ -14,6 +14,7 @@
     --card-bg: #ffffff;
     --sidebar-bg: #1E3F5F;           /* Dark blue for sidebar */
     --sidebar-text: #ffffff;
+    --brand-green: #7CB342;          /* Brand green for logos and highlights */
 }
 
 body {
@@ -122,4 +123,51 @@ body {
     background-repeat: no-repeat;
     background-position: right calc(0.375em + 0.1875rem) center;
     background-size: calc(0.75em + 0.375rem) calc(0.75em + 0.375rem);
+}
+
+/* Brand and Logo Styles */
+.brand-logo {
+    height: 40px;
+    width: auto;
+    margin-right: 10px;
+}
+
+.brand-text {
+    color: var(--brand-green) !important;
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+
+.brand-text .carbon {
+    color: var(--brand-green);
+}
+
+.brand-text .tracker {
+    color: var(--text-color);
+}
+
+.login-logo {
+    height: 60px;
+    width: auto;
+    margin-bottom: 1rem;
+}
+
+.auth-brand-text {
+    color: var(--brand-green) !important;
+    font-weight: 700;
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Header without Sign Out for auth pages */
+.auth-header {
+    background-color: var(--card-bg);
+    border-bottom: 1px solid var(--border-color);
+    padding: 1rem 0;
+}
+
+.auth-header .navbar-brand {
+    color: var(--brand-green) !important;
+    font-weight: 700;
+    font-size: 1.5rem;
 } 
