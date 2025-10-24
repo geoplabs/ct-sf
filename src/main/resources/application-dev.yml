@@ -1,0 +1,35 @@
+spring:
+  application:
+    name: carbon-tracker
+  # MongoDB configuration for development
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/dev-carbon-tracker
+      database: dev-carbon-tracker
+  # Thymeleaf configuration
+  thymeleaf:
+    cache: false
+    prefix: classpath:/templates/
+    suffix: .html
+    mode: HTML
+    encoding: UTF-8
+
+logging:
+  level:
+    root: INFO
+    com.sustainability: DEBUG
+
+server:
+  port: 8080
+
+# OpenAPI configuration
+springdoc:
+  api-docs:
+    path: /api-docs
+  swagger-ui:
+    path: /swagger-ui.html
+    operationsSorter: method
+    tagsSorter: alpha
+    disable-swagger-default-url: true
+  paths-to-match:
+    - /api/v1/**

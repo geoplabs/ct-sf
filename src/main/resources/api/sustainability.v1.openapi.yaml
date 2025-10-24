@@ -1,0 +1,221 @@
+openapi: 3.0.0
+info:
+  title: Sustainability API
+  version: 1.0.0
+  description: API for managing sustainability data
+
+paths:
+  /api/v1/calculation/{name}:
+    get:
+      tags:
+        - Calculation
+      summary: Find calculation by name
+      operationId: findCalculationByName
+      parameters:
+        - name: name
+          in: path
+          required: true
+          schema:
+            type: string
+          description: The name of the calculation
+      responses:
+        '200':
+          description: Successful retrieval
+          content:
+            application/json:
+              schema:
+                type: string
+        '404':
+          description: Calculation not found
+        '500':
+          description: Internal server error
+
+  /api/v1/calculation/update/{name}:
+    get:
+      tags:
+        - Calculation
+      summary: Update calculation by name
+      operationId: updateCalculationByName
+      parameters:
+        - name: name
+          in: path
+          required: true
+          schema:
+            type: string
+          description: The name of the calculation to update
+      responses:
+        '200':
+          description: Successful update
+          content:
+            application/json:
+              schema:
+                type: string
+        '404':
+          description: Calculation not found
+        '500':
+          description: Internal server error
+
+  /api/v1/calculations:
+    get:
+      tags:
+        - Calculation
+      summary: List all calculations
+      operationId: listCalculations
+      responses:
+        '200':
+          description: Successful retrieval
+          content:
+            application/json:
+              schema:
+                type: string
+        '500':
+          description: Internal server error
+
+  /api/v1/calculate/emissions:
+    post:
+      tags:
+        - Calculation
+      summary: Calculate emissions
+      operationId: calculateEmission
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                file:
+                  type: string
+                  format: binary
+                company:
+                  type: string
+                organization:
+                  type: string
+                unitName:
+                  type: string
+                fuelType:
+                  type: string
+      responses:
+        '200':
+          description: Successful calculation
+          content:
+            application/json:
+              schema:
+                type: string
+        '500':
+          description: Internal server error
+
+  /api/v1/emission-factors/{name}:
+    get:
+      tags:
+        - EmissionFactors
+      summary: Get emission factors by name
+      operationId: getEmissionFactors
+      parameters:
+        - name: name
+          in: path
+          required: true
+          schema:
+            type: string
+          description: The name of the emission factors
+      responses:
+        '200':
+          description: Successful retrieval
+          content:
+            application/json:
+              schema:
+                type: string
+        '404':
+          description: Emission factors not found
+        '500':
+          description: Internal server error
+
+  /api/v1/gwp/{name}:
+    get:
+      tags:
+        - GWP
+      summary: Get GWP by name
+      operationId: findGwpByName
+      parameters:
+        - name: name
+          in: path
+          required: true
+          schema:
+            type: string
+          description: The name of the GWP
+      responses:
+        '200':
+          description: Successful retrieval
+          content:
+            application/json:
+              schema:
+                type: string
+        '404':
+          description: GWP not found
+        '500':
+          description: Internal server error
+
+  /api/demo/country/{country}:
+    get:
+      tags:
+        - Tenant
+      summary: Get tenant by country
+      operationId: getTenantByCountry
+      parameters:
+        - name: country
+          in: path
+          required: true
+          schema:
+            type: string
+          description: The country of the tenant
+      responses:
+        '200':
+          description: Successful retrieval
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Tenant'
+        '404':
+          description: Tenant not found
+        '500':
+          description: Internal server error
+
+  /api/demo/company/{company}:
+    get:
+      tags:
+        - Tenant
+      summary: Get tenant by company
+      operationId: getTenantByCompany
+      parameters:
+        - name: company
+          in: path
+          required: true
+          schema:
+            type: string
+          description: The company of the tenant
+      responses:
+        '200':
+          description: Successful retrieval
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Tenant'
+        '404':
+          description: Tenant not found
+        '500':
+          description: Internal server error
+
+components:
+  schemas:
+    Tenant:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        name:
+          type: string
+        country:
+          type: string
+        company:
+          type: string

@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carbon Tracker - Data Source & Calculation Setup</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌿</text></svg>">
+    <style>
+        /* Sidebar styling */
+        .sidebar {
+            min-height: 100vh;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .sidebar-steps {
+            padding-left: 1rem;
+            padding-right: 1rem;
+        }
+
+        .step-item {
+            display: flex;
+            align-items: center;
+            padding: 0.75rem 0.5rem;
+            margin-bottom: 0.5rem;
+            border-radius: 0.5rem;
+            transition: background-color 0.2s;
+        }
+
+        .step-item.active {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .step-circle {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 2rem;
+            height: 2rem;
+            border-radius: 50%;
+            background-color: #6c757d;
+            color: white;
+            font-weight: bold;
+            margin-right: 1rem;
+        }
+
+        .step-item.active .step-circle {
+            background-color: #ffc107;
+            color: #212529;
+        }
+
+        .step-text {
+            font-size: 0.9rem;
+        }
+
+        /* Main content styling */
+        .main-content {
+            padding: 2rem;
+        }
+
+        .progress-header {
+            color: #6c757d;
+            border-bottom: 1px solid #dee2e6;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .card {
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            margin-bottom: 24px;
+            border: none;
+        }
+
+        /* Objective box styling */
+        .objective-box {
+            background-color: #f8f9fa;
+            border-left: 4px solid #ffc107;
+            padding: 1rem;
+            margin-bottom: 1.5rem;
+            color: #495057;
+        }
+
+        .objective-box i {
+            color: #ffc107;
+            font-size: 1.5rem;
+            margin-right: 1rem;
+        }
+
+        .info-card {
+            padding: 1.5rem;
+            height: 100%;
+        }
+
+        .info-card h5 {
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .info-card h5 img, 
+        .info-card h5 i {
+            margin-right: 0.75rem;
+        }
+
+        .info-card ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .info-card li {
+            margin-bottom: 0.5rem;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        .info-card li i {
+            position: absolute;
+            left: 0;
+            top: 0.25rem;
+            color: #0d6efd;
+        }
+
+        /* Workflow styling */
+        .workflow-container {
+            background-color: #fff;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .workflow-header {
+            margin-bottom: 1.5rem;
+            color: #212529;
+        }
+
+        .workflow-step {
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            border-left: 4px solid #ffc107;
+        }
+
+        .workflow-step-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 2rem;
+            height: 2rem;
+            border-radius: 50%;
+            background-color: #ffc107;
+            color: #212529;
+            font-weight: bold;
+            margin-right: 0.75rem;
+        }
+
+        /* Data source selector */
+        .data-source-option {
+            flex: 1;
+            padding: 1rem;
+            border: 1px solid #dee2e6;
+            border-radius: 8px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.2s;
+            margin-bottom: 1rem;
+        }
+
+        .data-source-option:hover {
+            background-color: #f8f9fa;
+            border-color: #ced4da;
+        }
+
+        .data-source-option i {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: #6c757d;
+        }
+
+        .data-source-option.selected {
+            background-color: #e9f5ff;
+            border-color: #0d6efd;
+        }
+
+        .data-source-option.selected i {
+            color: #0d6efd;
+        }
+
+        /* Form styling */
+        .form-control {
+            padding: 0.5rem 0.75rem;
+        }
+
+        .form-label {
+            color: #495057;
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+
+        .form-text {
+            font-size: 0.8rem;
+            color: #6c757d;
+        }
+
+        /* Button styling */
+        .btn-primary {
+            background-color: #0d6efd;
+            border-color: #0d6efd;
+        }
+
+        .btn-warning {
+            background-color: #ffc107;
+            border-color: #ffc107;
+            color: #212529;
+        }
+        
+        .btn-outline-secondary {
+            color: #6c757d;
+            border-color: #6c757d;
+        }
+
+        /* Emission factor table */
+        .emission-factor-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .emission-factor-table th,
+        .emission-factor-table td {
+            padding: 0.75rem;
+            border: 1px solid #dee2e6;
+        }
+
+        .emission-factor-table th {
+            background-color: #f8f9fa;
+            font-weight: 500;
+        }
+
+        /* Source type badges */
+        .source-badge {
+            display: inline-block;
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            color: white;
+            margin-right: 0.5rem;
+        }
+
+        .source-primary {
+            background-color: #0d6efd;
+        }
+
+        .source-secondary {
+            background-color: #6c757d;
+        }
+
+        .source-utility {
+            background-color: #198754;
+        }
+
+        .source-estimate {
+            background-color: #fd7e14;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .sidebar {
+                min-height: auto;
+            }
+            
+            .step-text {
+                font-size: 0.8rem;
+            }
+        }
+    </style>
+</head>
+<body class="bg-light">
+    <div class="container-fluid p-0">
+        <div class="row g-0">
+            <!-- Left sidebar navigation -->
+            <div class="col-md-3 col-lg-2 sidebar bg-dark text-white py-4">
+                <h4 class="ps-3 pb-3"><i class="bi bi-check-square me-2"></i> ComplianceCheck</h4>
+                <h5 class="ps-3 pb-3">Compliance Review</h5>
+                
+                <div class="sidebar-steps">
+                    <div class="step-item">
+                        <div class="step-circle">1</div>
+                        <div class="step-text">Welcome & Overview</div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-circle">2</div>
+                        <div class="step-text">Corporate Master Record Setup</div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-circle">3</div>
+                        <div class="step-text">Entity Hierarchy & Sub-Records Creation</div>
+                    </div>
+                    <div class="step-item active">
+                        <div class="step-circle">4</div>
+                        <div class="step-text">Data Source & Calculation Setup</div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-circle">5</div>
+                        <div class="step-text">Renewable Energy & Offsets Configuration</div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-circle">6</div>
+                        <div class="step-text">Verification, Data Quality, & Uncertainty</div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-circle">7</div>
+                        <div class="step-text">Integration Setup for ERP & External Data Sources</div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-circle">8</div>
+                        <div class="step-text">Final Review & Approval</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Main content area -->
+            <div class="col-md-9 col-lg-10 main-content px-4 py-4">
+                <div class="progress-header mb-4">
+                    <h6>Step 4 of 8: Data Source & Calculation Setup</h6>
+                </div>
+                
+                <h2 class="mb-4">Data Source & Calculation Setup</h2>
+                
+                <!-- Data Source Overview -->
+                <div class="card mb-4">
+                    <div class="card-body p-4">
+                        <h3 class="mb-4">Data Source Configuration</h3>
+                        
+                        <div class="objective-box d-flex align-items-center">
+                            <i class="bi bi-bullseye"></i>
+                            <div>
+                                <h5 class="mb-1">Objective</h5>
+                                <p class="mb-0">Configure <a href="#" class="text-primary">primary data sources</a> and <a href="#" class="text-primary">calculation methodologies</a> for each facility and emission type. Ensure all relevant <a href="#" class="text-primary">emission factors</a> are properly assigned to provide accurate and consistent GHG calculations.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="row g-4">
+                            <!-- Data Collection Methods -->
+                            <div class="col-md-4">
+                                <div class="card info-card h-100">
+                                    <h5><i class="bi bi-collection text-primary"></i> Data Collection Methods</h5>
+                                    <p>Configure how activity data is collected for each emission source:</p>
+                                    <ul>
+                                        <li><i class="bi bi-receipt"></i> Utility bills & invoices</li>
+                                        <li><i class="bi bi-speedometer"></i> Direct metering</li>
+                                        <li><i class="bi bi-database"></i> ERP system integration</li>
+                                        <li><i class="bi bi-calculator"></i> Engineering estimates</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <!-- Emission Factors -->
+                            <div class="col-md-4">
+                                <div class="card info-card h-100">
+                                    <h5><i class="bi bi-table text-primary"></i> Emission Factors</h5>
+                                    <p>Apply standardized conversion factors appropriate for each activity:</p>
+                                    <ul>
+                                        <li><i class="bi bi-globe"></i> Location-specific factors</li>
+                                        <li><i class="bi bi-plugin"></i> Energy & fuel factors</li>
+                                        <li><i class="bi bi-truck"></i> Transportation factors</li>
+                                        <li><i class="bi bi-clock-history"></i> Historical tracking</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <!-- Calculation Methodologies -->
+                            <div class="col-md-4">
+                                <div class="card info-card h-100">
+                                    <h5><i class="bi bi-graph-up-arrow text-primary"></i> Calculation Methods</h5>
+                                    <p>Select appropriate calculation approaches for different emissions:</p>
+                                    <ul>
+                                        <li><i class="bi bi-activity"></i> Activity-based calculations</li>
+                                        <li><i class="bi bi-rulers"></i> Mass balance approach</li>
+                                        <li><i class="bi bi-gear-wide"></i> Process-specific models</li>
+                                        <li><i class="bi bi-check-circle"></i> Compliance-approved methods</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Emission Factors Library -->
+                <div class="card mb-4">
+                    <div class="card-body p-4">
+                        <h3 class="mb-4">Emission Factors Library</h3>
+                        
+                        <div class="table-responsive">
+                            <table class="emission-factor-table">
+                                <thead>
+                                    <tr>
+                                        <th>Emission Factor</th>
+                                        <th>Value</th>
+                                        <th>Unit</th>
+                                        <th>Source</th>
+                                        <th>Region</th>
+                                        <th>Year</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Grid Electricity - UK</td>
+                                        <td>0.23314</td>
+                                        <td>kgCO₂e/kWh</td>
+                                        <td>DEFRA</td>
+                                        <td>United Kingdom</td>
+                                        <td>2023</td>
+                                        <td><button class="btn btn-sm btn-outline-primary">Apply</button></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Natural Gas - Commercial</td>
+                                        <td>0.18387</td>
+                                        <td>kgCO₂e/kWh</td>
+                                        <td>DEFRA</td>
+                                        <td>United Kingdom</td>
+                                        <td>2023</td>
+                                        <td><button class="btn btn-sm btn-outline-primary">Apply</button></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Diesel - Mobile Combustion</td>
+                                        <td>2.68787</td>
+                                        <td>kgCO₂e/liter</td>
+                                        <td>DEFRA</td>
+                                        <td>United Kingdom</td>
+                                        <td>2023</td>
+                                        <td><button class="btn btn-sm btn-outline-primary">Apply</button></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Diesel - Stationary Combustion</td>
+                                        <td>2.75821</td>
+                                        <td>kgCO₂e/liter</td>
+                                        <td>DEFRA</td>
+                                        <td>United Kingdom</td>
+                                        <td>2023</td>
+                                        <td><button class="btn btn-sm btn-outline-primary">Apply</button></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Business Travel - Air (Long-haul)</td>
+                                        <td>0.14787</td>
+                                        <td>kgCO₂e/passenger-km</td>
+                                        <td>DEFRA</td>
+                                        <td>International</td>
+                                        <td>2023</td>
+                                        <td><button class="btn btn-sm btn-outline-primary">Apply</button></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        
+                        <div class="d-flex justify-content-end mt-3">
+                            <button class="btn btn-outline-primary btn-sm">
+                                <i class="bi bi-plus-circle me-1"></i> Add Custom Factor
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Data Source Configuration Workflow -->
+                <div class="card mb-4">
+                    <div class="card-body p-4">
+                        <h3 class="mb-4">Data Source Configuration Workflow</h3>
+                        
+                        <div class="workflow-container">
+                            <!-- Step 1: Select Facility -->
+                            <div class="workflow-step">
+                                <h5 class="mb-3">
+                                    <span class="workflow-step-number">1</span>
+                                    Select Facility
+                                </h5>
+                                
+                                <div class="mb-3">
+                                    <label for="facilitySelector" class="form-label">Choose Facility</label>
+                                    <select class="form-select" id="facilitySelector">
+                                        <option selected>UK-REF-001 - Shell UK Refinery - Fawley</option>
+                                        <option>UK-ODS-001 - Shell UK Offshore Drilling Site</option>
+                                        <option>UK-CH-001 - Shell UK HQ Office</option>
+                                        <option>UK-SUB-001 - Shell UK Subsidiary - Energy Trading</option>
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <!-- Step 2: Select Emission Category -->
+                            <div class="workflow-step">
+                                <h5 class="mb-3">
+                                    <span class="workflow-step-number">2</span>
+                                    Select Emission Category
+                                </h5>
+                                
+                                <div class="row">
+                                    <div class="col-md-4 mb-3">
+                                        <div class="data-source-option selected">
+                                            <i class="bi bi-fire"></i>
+                                            <div class="fw-bold">Scope 1</div>
+                                            <div class="small text-muted">Direct emissions owned or controlled</div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 mb-3">
+                                        <div class="data-source-option">
+                                            <i class="bi bi-lightning"></i>
+                                            <div class="fw-bold">Scope 2</div>
+                                            <div class="small text-muted">Indirect emissions from purchased energy</div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 mb-3">
+                                        <div class="data-source-option">
+                                            <i class="bi bi-box"></i>
+                                            <div class="fw-bold">Scope 3</div>
+                                            <div class="small text-muted">Other indirect emissions in value chain</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Step 3: Select Emission Source -->
+                            <div class="workflow-step">
+                                <h5 class="mb-3">
+                                    <span class="workflow-step-number">3</span>
+                                    Select Emission Source
+                                </h5>
+                                
+                                <div class="mb-3">
+                                    <label class="form-label">Emission Sources for Scope 1</label>
+                                    <div class="row">
+                                        <div class="col-md-6 mb-2">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="source1" checked>
+                                                <label class="form-check-label" for="source1">
+                                                    Stationary Combustion - Natural Gas
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 mb-2">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="source2" checked>
+                                                <label class="form-check-label" for="source2">
+                                                    Stationary Combustion - Diesel
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 mb-2">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="source3" checked>
+                                                <label class="form-check-label" for="source3">
+                                                    Mobile Combustion - Company Vehicles
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 mb-2">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="source4" checked>
+                                                <label class="form-check-label" for="source4">
+                                                    Process Emissions - Refining
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 mb-2">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="source5">
+                                                <label class="form-check-label" for="source5">
+                                                    Fugitive Emissions - Refrigerants
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Step 4: Configure Data Source -->
+                            <div class="workflow-step">
+                                <h5 class="mb-3">
+                                    <span class="workflow-step-number">4</span>
+                                    Configure Data Source
+                                </h5>
+                                
+                                <div class="row mb-3">
+                                    <div class="col-md-6">
+                                        <label for="dataSourceType" class="form-label">Data Source Type</label>
+                                        <select class="form-select" id="dataSourceType">
+                                            <option selected>Direct Measurement</option>
+                                            <option>Utility Bills</option>
+                                            <option>ERP System Import</option>
+                                            <option>Calculated/Estimated</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="dataFrequency" class="form-label">Data Collection Frequency</label>
+                                        <select class="form-select" id="dataFrequency">
+                                            <option>Daily</option>
+                                            <option selected>Monthly</option>
+                                            <option>Quarterly</option>
+                                            <option>Annually</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                
+                                <div class="row mb-3">
+                                    <div class="col-md-6">
+                                        <label for="dataFormat" class="form-label">Data Format</label>
+                                        <select class="form-select" id="dataFormat">
+                                            <option selected>Physical Volume (m³)</option>
+                                            <option>Mass (kg)</option>
+                                            <option>Energy Content (kWh)</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="dataConversion" class="form-label">Conversion Factor Required</label>
+                                        <select class="form-select" id="dataConversion">
+                                            <option selected>Yes</option>
+                                            <option>No</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                
+                                <div class="mb-3">
+                                    <label for="dataSourceNotes" class="form-label">Additional Notes</label>
+                                    <textarea class="form-control" id="dataSourceNotes" rows="2">Natural gas usage is recorded from utility meters and cross-checked with monthly invoices.</textarea>
+                                </div>
+                            </div>
+                            
+                            <!-- Step 5: Apply Emission Factors -->
+                            <div class="workflow-step">
+                                <h5 class="mb-3">
+                                    <span class="workflow-step-number">5</span>
+                                    Apply Emission Factor
+                                </h5>
+                                
+                                <div class="row mb-3">
+                                    <div class="col-md-6">
+                                        <label for="emissionFactorSource" class="form-label">Emission Factor Source</label>
+                                        <select class="form-select" id="emissionFactorSource">
+                                            <option selected>DEFRA (UK)</option>
+                                            <option>EPA (US)</option>
+                                            <option>IEA</option>
+                                            <option>Custom/Supplier-specific</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="emissionFactorValue" class="form-label">Emission Factor Value</label>
+                                        <input type="text" class="form-control" id="emissionFactorValue" value="0.18387 kgCO₂e/kWh">
+                                    </div>
+                                </div>
+                                
+                                <div class="row mb-3">
+                                    <div class="col-md-6">
+                                        <label for="gwpValues" class="form-label">GWP Values Based On</label>
+                                        <select class="form-select" id="gwpValues">
+                                            <option selected>IPCC AR5</option>
+                                            <option>IPCC AR6</option>
+                                            <option>Custom</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="factorYear" class="form-label">Factor Reference Year</label>
+                                        <input type="text" class="form-control" id="factorYear" value="2023">
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Step 6: Setup Calculation Method -->
+                            <div class="workflow-step">
+                                <h5 class="mb-3">
+                                    <span class="workflow-step-number">6</span>
+                                    Setup Calculation Method
+                                </h5>
+                                
+                                <div class="row mb-3">
+                                    <div class="col-md-12">
+                                        <label for="calculationMethod" class="form-label">Calculation Method</label>
+                                        <select class="form-select" id="calculationMethod">
+                                            <option selected>Activity data × Emission factor</option>
+                                            <option>Mass balance</option>
+                                            <option>Direct measurement</option>
+                                            <option>Engineering calculations</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                
+                                <div class="mb-3">
+                                    <label for="calculationFormula" class="form-label">Calculation Formula</label>
+                                    <input type="text" class="form-control" id="calculationFormula" value="Monthly gas volume (m³) × Calorific value (kWh/m³) × Emission factor (kgCO₂e/kWh)">
+                                </div>
+                                
+                                <div class="mb-3">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="applyUncertainty" checked>
+                                        <label class="form-check-label" for="applyUncertainty">
+                                            Apply uncertainty assessment to this calculation
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="d-flex justify-content-end">
+                            <button type="button" class="btn btn-outline-secondary me-2">Save as Draft</button>
+                            <button type="button" class="btn btn-warning">Submit & Save</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Data Source Overview -->
+                <div class="card mb-4">
+                    <div class="card-body p-4">
+                        <h3 class="mb-4">Current Data Sources Configuration</h3>
+                        
+                        <div class="table-responsive">
+                            <table class="table table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>Facility</th>
+                                        <th>Emission Source</th>
+                                        <th>Scope</th>
+                                        <th>Data Source</th>
+                                        <th>Emission Factor</th>
+                                        <th>Status</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>UK-REF-001</td>
+                                        <td>Stationary Combustion - Natural Gas</td>
+                                        <td><span class="source-badge source-primary">Scope 1</span></td>
+                                        <td>Utility Bills</td>
+                                        <td>0.18387 kgCO₂e/kWh</td>
+                                        <td><span class="badge bg-success">Active</span></td>
+                                        <td>
+                                            <button class="btn btn-sm btn-outline-primary">Edit</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>UK-REF-001</td>
+                                        <td>Process Emissions - Refining</td>
+                                        <td><span class="source-badge source-primary">Scope 1</span></td>
+                                        <td>Direct Measurement</td>
+                                        <td>Custom factors</td>
+                                        <td><span class="badge bg-success">Active</span></td>
+                                        <td>
+                                            <button class="btn btn-sm btn-outline-primary">Edit</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>UK-REF-001</td>
+                                        <td>Purchased Electricity</td>
+                                        <td><span class="source-badge source-secondary">Scope 2</span></td>
+                                        <td>Utility Bills</td>
+                                        <td>0.23314 kgCO₂e/kWh</td>
+                                        <td><span class="badge bg-success">Active</span></td>
+                                        <td>
+                                            <button class="btn btn-sm btn-outline-primary">Edit</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>UK-CH-001</td>
+                                        <td>Purchased Electricity</td>
+                                        <td><span class="source-badge source-secondary">Scope 2</span></td>
+                                        <td>Utility Bills</td>
+                                        <td>0.23314 kgCO₂e/kWh</td>
+                                        <td><span class="badge bg-success">Active</span></td>
+                                        <td>
+                                            <button class="btn btn-sm btn-outline-primary">Edit</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>UK-ODS-001</td>
+                                        <td>Mobile Combustion - Vessels</td>
+                                        <td><span class="source-badge source-primary">Scope 1</span></td>
+                                        <td>Fuel Purchase Records</td>
+                                        <td>2.68787 kgCO₂e/liter</td>
+                                        <td><span class="badge bg-warning text-dark">Pending</span></td>
+                                        <td>
+                                            <button class="btn btn-sm btn-outline-primary">Edit</button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Handle data source type selection
+            const dataSourceOptions = document.querySelectorAll('.data-source-option');
+            dataSourceOptions.forEach(option => {
+                option.addEventListener('click', function() {
+                    // Remove selected class from all options
+                    dataSourceOptions.forEach(opt => opt.classList.remove('selected'));
+                    // Add selected class to clicked option
+                    this.classList.add('selected');
+                });
+            });
+        });
+    </script>
+</body>
+</html> 

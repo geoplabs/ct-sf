@@ -1,0 +1,4056 @@
+[
+    {
+      "section_code": "A",
+      "title": "Agriculture, forestry and fishing",
+      "divisions": [
+        {
+          "division_code": "01",
+          "title": "Crop and animal production, hunting and related service activities",
+          "groups": [
+            {
+              "group_code": "011",
+              "title": "Growing of non-perennial crops",
+              "classes": [
+                {
+                  "class_code": "0111",
+                  "title": "Growing of cereals (except rice), leguminous crops and oil seeds"
+                },
+                {
+                  "class_code": "0112",
+                  "title": "Growing of rice"
+                },
+                {
+                  "class_code": "0113",
+                  "title": "Growing of vegetables and melons, roots and tubers"
+                },
+                {
+                  "class_code": "0114",
+                  "title": "Growing of sugar cane"
+                },
+                {
+                  "class_code": "0115",
+                  "title": "Growing of tobacco"
+                },
+                {
+                  "class_code": "0116",
+                  "title": "Growing of fibre crops"
+                },
+                {
+                  "class_code": "0119",
+                  "title": "Growing of other non-perennial crops"
+                }
+              ]
+            },
+            {
+              "group_code": "012",
+              "title": "Growing of perennial crops",
+              "classes": [
+                {
+                  "class_code": "0121",
+                  "title": "Growing of grapes"
+                },
+                {
+                  "class_code": "0122",
+                  "title": "Growing of tropical and subtropical fruits"
+                },
+                {
+                  "class_code": "0123",
+                  "title": "Growing of citrus fruits"
+                },
+                {
+                  "class_code": "0124",
+                  "title": "Growing of pome fruits and stone fruits"
+                },
+                {
+                  "class_code": "0125",
+                  "title": "Growing of other tree and bush fruits and nuts"
+                },
+                {
+                  "class_code": "0126",
+                  "title": "Growing of oleaginous fruits"
+                },
+                {
+                  "class_code": "0127",
+                  "title": "Growing of beverage crops"
+                },
+                {
+                  "class_code": "0128",
+                  "title": "Growing of spices, aromatic, drug and pharmaceutical crops"
+                },
+                {
+                  "class_code": "0129",
+                  "title": "Growing of other perennial crops"
+                }
+              ]
+            },
+            {
+              "group_code": "013",
+              "title": "Plant propagation",
+              "classes": [
+                {
+                  "class_code": "0130",
+                  "title": "Plant propagation"
+                }
+              ]
+            },
+            {
+              "group_code": "014",
+              "title": "Animal production",
+              "classes": [
+                {
+                  "class_code": "0141",
+                  "title": "Raising of cattle and buffaloes"
+                },
+                {
+                  "class_code": "0142",
+                  "title": "Raising of horses and other equines"
+                },
+                {
+                  "class_code": "0143",
+                  "title": "Raising of camels and camelids"
+                },
+                {
+                  "class_code": "0144",
+                  "title": "Raising of sheep and goats"
+                },
+                {
+                  "class_code": "0145",
+                  "title": "Raising of swine and pigs"
+                },
+                {
+                  "class_code": "0146",
+                  "title": "Raising of poultry"
+                },
+                {
+                  "class_code": "0149",
+                  "title": "Raising of other animals"
+                }
+              ]
+            },
+            {
+              "group_code": "015",
+              "title": "Mixed farming",
+              "classes": [
+                {
+                  "class_code": "0150",
+                  "title": "Mixed farming"
+                }
+              ]
+            },
+            {
+              "group_code": "016",
+              "title": "Support activities to agriculture and post-harvest crop activities",
+              "classes": [
+                {
+                  "class_code": "0161",
+                  "title": "Support activities for crop production"
+                },
+                {
+                  "class_code": "0162",
+                  "title": "Support activities for animal production"
+                },
+                {
+                  "class_code": "0163",
+                  "title": "Post-harvest crop activities"
+                },
+                {
+                  "class_code": "0164",
+                  "title": "Seed processing for propagation"
+                }
+              ]
+            },
+            {
+              "group_code": "017",
+              "title": "Hunting, trapping and related service activities",
+              "classes": [
+                {
+                  "class_code": "0170",
+                  "title": "Hunting, trapping and related service activities"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "division_code": "02",
+          "title": "Forestry and logging",
+          "groups": [
+            {
+              "group_code": "021",
+              "title": "Silviculture and other forestry activities",
+              "classes": [
+                {
+                  "class_code": "0210",
+                  "title": "Silviculture and other forestry activities"
+                }
+              ]
+            },
+            {
+              "group_code": "022",
+              "title": "Logging",
+              "classes": [
+                {
+                  "class_code": "0220",
+                  "title": "Logging"
+                }
+              ]
+            },
+            {
+              "group_code": "023",
+              "title": "Gathering of non-wood forest products",
+              "classes": [
+                {
+                  "class_code": "0230",
+                  "title": "Gathering of non-wood forest products"
+                }
+              ]
+            },
+            {
+              "group_code": "024",
+              "title": "Support services to forestry",
+              "classes": [
+                {
+                  "class_code": "0240",
+                  "title": "Support services to forestry"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "division_code": "03",
+          "title": "Fishing and aquaculture",
+          "groups": [
+            {
+              "group_code": "031",
+              "title": "Fishing",
+              "classes": [
+                {
+                  "class_code": "0311",
+                  "title": "Marine fishing"
+                },
+                {
+                  "class_code": "0312",
+                  "title": "Freshwater fishing"
+                }
+              ]
+            },
+            {
+              "group_code": "032",
+              "title": "Aquaculture",
+              "classes": [
+                {
+                  "class_code": "0321",
+                  "title": "Marine aquaculture"
+                },
+                {
+                  "class_code": "0322",
+                  "title": "Freshwater aquaculture"
+                }
+              ]
+            },
+            {
+              "group_code": "033",
+              "title": "Support activities for fishing and aquaculture",
+              "classes": [
+                {
+                  "class_code": "0330",
+                  "title": "Support activities for fishing and aquaculture"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section_code": "B",
+      "title": "Mining and quarrying",
+      "divisions": [
+        {
+          "division_code": "05",
+          "title": "Mining of coal and lignite",
+          "groups": [
+            {
+              "group_code": "051",
+              "title": "Mining of hard coal",
+              "classes": [
+                {
+                  "class_code": "0510",
+                  "title": "Mining of hard coal"
+                }
+              ]
+            },
+            {
+              "group_code": "052",
+              "title": "Mining of lignite",
+              "classes": [
+                {
+                  "class_code": "0520",
+                  "title": "Mining of lignite"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "division_code": "06",
+          "title": "Extraction of crude petroleum and natural gas",
+          "groups": [
+            {
+              "group_code": "061",
+              "title": "Extraction of crude petroleum",
+              "classes": [
+                {
+                  "class_code": "0610",
+                  "title": "Extraction of crude petroleum"
+                }
+              ]
+            },
+            {
+              "group_code": "062",
+              "title": "Extraction of natural gas",
+              "classes": [
+                {
+                  "class_code": "0620",
+                  "title": "Extraction of natural gas"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "division_code": "07",
+          "title": "Mining of metal ores",
+          "groups": [
+            {
+              "group_code": "071",
+              "title": "Mining of iron ores",
+              "classes": [
+                {
+                  "class_code": "0710",
+                  "title": "Mining of iron ores"
+                }
+              ]
+            },
+            {
+              "group_code": "072",
+              "title": "Mining of non-ferrous metal ores",
+              "classes": [
+                {
+                  "class_code": "0721",
+                  "title": "Mining of uranium and thorium ores"
+                },
+                {
+                  "class_code": "0729",
+                  "title": "Mining of other non-ferrous metal ores"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "division_code": "08",
+          "title": "Other mining and quarrying",
+          "groups": [
+            {
+              "group_code": "081",
+              "title": "Quarrying of stone, sand and clay",
+              "classes": [
+                {
+                  "class_code": "0810",
+                  "title": "Quarrying of stone, sand and clay"
+                }
+              ]
+            },
+            {
+              "group_code": "089",
+              "title": "Mining and quarrying n.e.c.",
+              "classes": [
+                {
+                  "class_code": "0891",
+                  "title": "Mining of chemical and fertilizer minerals"
+                },
+                {
+                  "class_code": "0892",
+                  "title": "Extraction of peat"
+                },
+                {
+                  "class_code": "0893",
+                  "title": "Extraction of salt"
+                },
+                {
+                  "class_code": "0899",
+                  "title": "Other mining and quarrying n.e.c."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "division_code": "09",
+          "title": "Mining support service activities",
+          "groups": [
+            {
+              "group_code": "091",
+              "title": "Support activities for petroleum and natural gas extraction",
+              "classes": [
+                {
+                  "class_code": "0910",
+                  "title": "Support activities for petroleum and natural gas extraction"
+                }
+              ]
+            },
+            {
+              "group_code": "099",
+              "title": "Support activities for other mining and quarrying",
+              "classes": [
+                {
+                  "class_code": "0990",
+                  "title": "Support activities for other mining and quarrying"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section_code": "C",
+      "title": "Manufacturing",
+      "divisions": [
+        {
+          "division_code": "10",
+          "title": "Manufacture of food products",
+          "groups": [
+            {
+              "group_code": "101",
+              "title": "Processing and preserving of meat",
+              "classes": [
+                {
+                  "class_code": "1010",
+                  "title": "Processing and preserving of meat"
+                }
+              ]
+            },
+            {
+              "group_code": "102",
+              "title": "Processing and preserving of fish, crustaceans and molluscs",
+              "classes": [
+                {
+                  "class_code": "1020",
+                  "title": "Processing and preserving of fish, crustaceans and molluscs"
+                }
+              ]
+            },
+            {
+              "group_code": "103",
+              "title": "Processing and preserving of fruit and vegetables",
+              "classes": [
+                {
+                  "class_code": "1030",
+                  "title": "Processing and preserving of fruit and vegetables"
+                }
+              ]
+            },
+            {
+              "group_code": "104",
+              "title": "Manufacture of vegetable and animal oils and fats",
+              "classes": [
+                {
+                  "class_code": "1040",
+                  "title": "Manufacture of vegetable and animal oils and fats"
+                }
+              ]
+            },
+            {
+              "group_code": "105",
+              "title": "Manufacture of dairy products",
+              "classes": [
+                {
+                  "class_code": "1050",
+                  "title": "Manufacture of dairy products"
+                }
+              ]
+            },
+            {
+              "group_code": "106",
+              "title": "Manufacture of grain mill products, starches and starch products",
+              "classes": [
+                {
+                  "class_code": "1061",
+                  "title": "Manufacture of grain mill products"
+                },
+                {
+                  "class_code": "1062",
+                  "title": "Manufacture of starches and starch products"
+                }
+              ]
+            },
+            {
+              "group_code": "107",
+              "title": "Manufacture of other food products",
+              "classes": [
+                {
+                  "class_code": "1071",
+                  "title": "Manufacture of bakery products"
+                },
+                {
+                  "class_code": "1072",
+                  "title": "Manufacture of sugar"
+                },
+                {
+                  "class_code": "1073",
+                  "title": "Manufacture of cocoa, chocolate and sugar confectionery"
+                },
+                {
+                  "class_code": "1074",
+                  "title": "Manufacture of macaroni, noodles, couscous and similar farinaceous products"
+                },
+                {
+                  "class_code": "1075",
+                  "title": "Manufacture of prepared meals and dishes"
+                },
+                {
+                  "class_code": "1076",
+                  "title": "Processing of coffee and tea"
+                },
+                {
+                  "class_code": "1079",
+                  "title": "Manufacture of other food products n.e.c."
+                }
+              ]
+            },
+            {
+              "group_code": "108",
+              "title": "Manufacture of prepared animal feeds",
+              "classes": [
+                {
+                  "class_code": "1080",
+                  "title": "Manufacture of prepared animal feeds"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "division_code": "11",
+          "title": "Manufacture of beverages",
+          "groups": [
+            {
+              "group_code": "110",
+              "title": "Manufacture of beverages",
+              "classes": [
+                {
+                  "class_code": "1101",
+                  "title": "Distilling, rectifying and blending of spirits"
+                },
+                {
+                  "class_code": "1102",
+                  "title": "Manufacture of wines"
+                },
+                {
+                  "class_code": "1103",
+                  "title": "Manufacture of beer"
+                },
+                {
+                  "class_code": "1104",
+                  "title": "Manufacture of malt"
+                },
+                {
+                  "class_code": "1105",
+                  "title": "Manufacture of soft drinks; production of mineral waters and other bottled waters"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "division_code": "12",
+          "title": "Manufacture of tobacco products",
+          "groups": [
+            {
+              "group_code": "120",
+              "title": "Manufacture of tobacco products",
+              "classes": [
+                {
+                  "class_code": "1200",
+                  "title": "Manufacture of tobacco products"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "division_code": "13",
+          "title": "Manufacture of textiles",
+          "groups": [
+            {
+              "group_code": "131",
+              "title": "Spinning, weaving and finishing of textiles",
+              "classes": [
+                {
+                  "class_code": "1311",
+                  "title": "Preparation and spinning of textile fibres"
+                },
+                {
+                  "class_code": "1312",
+                  "title": "Weaving of textiles"
+                },
+                {
+                  "class_code": "1313",
+                  "title": "Finishing of textiles"
+                }
+              ]
+            },
+            {
+              "group_code": "139",
+              "title": "Manufacture of other textiles",
+              "classes": [
+                {
+                  "class_code": "1391",
+                  "title": "Manufacture of knitted and crocheted fabrics"
+                },
+                {
+                  "class_code": "1392",
+                  "title": "Manufacture of made-up textile articles, except apparel"
+                },
+                {
+                  "class_code": "1393",
+                  "title": "Manufacture of carpets and rugs"
+                },
+                {
+                  "class_code": "1394",
+                  "title": "Manufacture of cordage, rope, twine and netting"
+                },
+                {
+                  "class_code": "1399",
+                  "title": "Manufacture of other textiles n.e.c."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "division_code": "14",
+          "title": "Manufacture of wearing apparel",
+          "groups": [
+            {
+              "group_code": "141",
+              "title": "Manufacture of wearing apparel, except fur apparel",
+              "classes": [
+                {
+                  "class_code": "1410",
+                  "title": "Manufacture of wearing apparel, except fur apparel"
+                }
+              ]
+            },
+            {
+              "group_code": "142",
+              "title": "Manufacture of articles of fur",
+              "classes": [
+                {
+                  "class_code": "1420",
+                  "title": "Manufacture of articles of fur"
+                }
+              ]
+            },
+            {
+              "group_code": "143",
+              "title": "Manufacture of knitted and crocheted apparel",
+              "classes": [
+                {
+                  "class_code": "1430",
+                  "title": "Manufacture of knitted and crocheted apparel"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "division_code": "15",
+          "title": "Manufacture of leather and related products",
+          "groups": [
+            {
+              "group_code": "151",
+              "title": "Tanning, dyeing, dressing of leather and fur; manufacture of luggage, handbags, saddlery and harness",
+              "classes": [
+                {
+                  "class_code": "1511",
+                  "title": "Tanning and dressing of leather; dressing and dyeing of fur"
+                },
+                {
+                  "class_code": "1512",
+                  "title": "Manufacture of luggage, handbags and the like, saddlery and harness of any material"
+                }
+              ]
+            },
+            {
+              "group_code": "152",
+              "title": "Manufacture of footwear",
+              "classes": [
+                {
+                  "class_code": "1520",
+                  "title": "Manufacture of footwear"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "division_code": "16",
+          "title": "Manufacture of wood and of products of wood and cork, except furniture; manufacture of articles of straw and plaiting materials",
+          "groups": [
+            {
+              "group_code": "161",
+              "title": "Sawmilling and planing of wood",
+              "classes": [
+                {
+                  "class_code": "1610",
+                  "title": "Sawmilling and planing of wood"
+                }
+              ]
+            },
+            {
+              "group_code": "162",
+              "title": "Manufacture of products of wood, cork, straw and plaiting materials",
+              "classes": [
+                {
+                  "class_code": "1621",
+                  "title": "Manufacture of veneer sheets and wood-based panels"
+                },
+                {
+                  "class_code": "1622",
+                  "title": "Manufacture of builders' carpentry and joinery"
+                },
+                {
+                  "class_code": "1623",
+                  "title": "Manufacture of wooden containers"
+                },
+                {
+                  "class_code": "1629",
+                  "title": "Manufacture of other products of wood; manufacture of articles of cork, straw and plaiting materials"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "division_code": "17",
+          "title": "Manufacture of paper and paper products",
+          "groups": [
+            {
+              "group_code": "170",
+              "title": "Manufacture of paper and paper products",
+              "classes": [
+                {
+                  "class_code": "1701",
+                  "title": "Manufacture of pulp, paper and paperboard"
+                },
+                {
+                  "class_code": "1702",
+                  "title": "Manufacture of corrugated paper and paperboard and of containers of paper and paperboard"
+                },
+                {
+                  "class_code": "1709",
+                  "title": "Manufacture of other articles of paper and paperboard"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "division_code": "18",
+          "title": "Printing and reproduction of recorded media",
+          "groups": [
+            {
+              "group_code": "181",
+              "title": "Printing and service activities related to printing",
+              "classes": [
+                {
+                  "class_code": "1811",
+                  "title": "Printing"
+                },
+                {
+                  "class_code": "1812",
+                  "title": "Service activities related to printing"
+                }
+              ]
+            },
+            {
+              "group_code": "182",
+              "title": "Reproduction of recorded media",
+              "classes": [
+                {
+                  "class_code": "1820",
+                  "title": "Reproduction of recorded media"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "division_code": "19",
+          "title": "Manufacture of coke and refined petroleum products",
+          "groups": [
+            {
+              "group_code": "191",
+              "title": "Manufacture of coke oven products",
+              "classes": [
+                {
+                  "class_code": "1910",
+                  "title": "Manufacture of coke oven products"
+                }
+              ]
+            },
+            {
+              "group_code": "192",
+              "title": "Manufacture of refined petroleum products; manufacture of fossil fuel products",
+              "classes": [
+                {
+                  "class_code": "1920",
+                  "title": "Manufacture of refined petroleum products; manufacture of fossil fuel products"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "division_code": "20",
+          "title": "Manufacture of chemicals and chemical products",
+          "groups": [
+            {
+              "group_code": "201",
+              "title": "Manufacture of basic chemicals, fertilizers and nitrogen compounds, plastics and synthetic rubber in primary forms",
+              "classes": [
+                {
+                  "class_code": "2011",
+                  "title": "Manufacture of basic chemicals"
+                },
+                {
+                  "class_code": "2012",
+                  "title": "Manufacture of fertilizers and nitrogen compounds"
+                },
+                {
+                  "class_code": "2013",
+                  "title": "Manufacture of plastics and synthetic rubber in primary forms"
+                }
+              ]
+            },
+            {
+              "group_code": "202",
+              "title": "Manufacture of other chemical products",
+              "classes": [
+                {
+                  "class_code": "2021",
+                  "title": "Manufacture of pesticides and other agrochemical products"
+                },
+                {
+                  "class_code": "2022",
+                  "title": "Manufacture of paints, varnishes and similar coatings, printing ink and mastics"
+                },
+                {
+                  "class_code": "2023",
+                  "title": "Manufacture of soap and detergents, cleaning and polishing preparations, perfumes and toilet preparations"
+                },
+                {
+                  "class_code": "2029",
+                  "title": "Manufacture of other chemical products n.e.c."
+                }
+              ]
+            },
+            {
+              "group_code": "203",
+              "title": "Manufacture of man-made fibres",
+              "classes": [
+                {
+                  "class_code": "2030",
+                  "title": "Manufacture of man-made fibres"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "division_code": "21",
+          "title": "Manufacture of basic pharmaceutical products and pharmaceutical preparations",
+          "groups": [
+            {
+              "group_code": "210",
+              "title": "Manufacture of pharmaceuticals, medicinal chemical and botanical products",
+              "classes": [
+                {
+                  "class_code": "2100",
+                  "title": "Manufacture of pharmaceuticals, medicinal chemical and botanical products"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "division_code": "22",
+          "title": "Manufacture of rubber and plastic products",
+          "groups": [
+            {
+              "group_code": "221",
+              "title": "Manufacture of rubber products",
+              "classes": [
+                {
+                  "class_code": "2211",
+                  "title": "Manufacture of rubber tyres and tubes; retreading and rebuilding of rubber tyres"
+                },
+                {
+                  "class_code": "2219",
+                  "title": "Manufacture of other rubber products"
+                }
+              ]
+            },
+            {
+              "group_code": "222",
+              "title": "Manufacture of plastics products",
+              "classes": [
+                {
+                  "class_code": "2220",
+                  "title": "Manufacture of plastics products"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "division_code": "23",
+          "title": "Manufacture of other non-metallic mineral products",
+          "groups": [
+            {
+              "group_code": "231",
+              "title": "Manufacture of glass and glass products",
+              "classes": [
+                {
+                  "class_code": "2310",
+                  "title": "Manufacture of glass and glass products"
+                }
+              ]
+            },
+            {
+              "group_code": "239",
+              "title": "Manufacture of non-metallic mineral products n.e.c.",
+              "classes": [
+                {
+                  "class_code": "2391",
+                  "title": "Manufacture of refractory products"
+                },
+                {
+                  "class_code": "2392",
+                  "title": "Manufacture of clay building materials"
+                },
+                {
+                  "class_code": "2393",
+                  "title": "Manufacture of other porcelain and ceramic products"
+                },
+                {
+                  "class_code": "2394",
+                  "title": "Manufacture of cement, lime and plaster"
+                },
+                {
+                  "class_code": "2395",
+                  "title": "Manufacture of articles of concrete, cement and plaster"
+                },
+                {
+                  "class_code": "2396",
+                  "title": "Cutting, shaping and finishing of stone"
+                },
+                {
+                  "class_code": "2399",
+                  "title": "Manufacture of other non-metallic mineral products n.e.c."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "division_code": "24",
+          "title": "Manufacture of basic metals",
+          "groups": [
+            {
+              "group_code": "241",
+              "title": "Manufacture of basic iron and steel",
+              "classes": [
+                {
+                  "class_code": "2410",
+                  "title": "Manufacture of basic iron and steel"
+                }
+              ]
+            },
+            {
+              "group_code": "242",
+              "title": "Manufacture of basic precious and other non-ferrous metals",
+              "classes": [
+                {
+                  "class_code": "2420",
+                  "title": "Manufacture of basic precious and other non-ferrous metals"
+                }
+              ]
+            },
+            {
+              "group_code": "243",
+              "title": "Casting of metals",
+              "classes": [
+                {
+                  "class_code": "2431",
+                  "title": "Casting of iron and steel"
+                },
+                {
+                  "class_code": "2432",
+                  "title": "Casting of non-ferrous metals"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "division_code": "25",
+          "title": "Manufacture of fabricated metal products, except machinery and equipment",
+          "groups": [
+            {
+              "group_code": "251",
+              "title": "Manufacture of structural metal products, tanks, reservoirs and steam generators",
+              "classes": [
+                {
+                  "class_code": "2511",
+                  "title": "Manufacture of structural metal products"
+                },
+                {
+                  "class_code": "2512",
+                  "title": "Manufacture of tanks, reservoirs and containers of metal"
+                },
+                {
+                  "class_code": "2513",
+                  "title": "Manufacture of steam generators, except central heating hot water boilers"
+                }
+              ]
+            },
+            {
+              "group_code": "252",
+              "title": "Manufacture of weapons and ammunition",
+              "classes": [
+                {
+                  "class_code": "2520",
+                  "title": "Manufacture of weapons and ammunition"
+                }
+              ]
+            },
+            {
+              "group_code": "259",
+              "title": "Manufacture of other fabricated metal products; metalworking service activities",
+              "classes": [
+                {
+                  "class_code": "2591",
+                  "title": "Forging, pressing, stamping and roll-forming of metal; powder metallurgy"
+                },
+                {
+                  "class_code": "2592",
+                  "title": "Treatment and coating of metals; machining"
+                },
+                {
+                  "class_code": "2593",
+                  "title": "Manufacture of cutlery, hand tools and general hardware"
+                },
+                {
+                  "class_code": "2599",
+                  "title": "Manufacture of other fabricated metal products n.e.c."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "division_code": "26",
+          "title": "Manufacture of computer, electronic and optical products",
+          "groups": [
+            {
+              "group_code": "261",
+              "title": "Manufacture of electronic components and boards",
+              "classes": [
+                {
+                  "class_code": "2611",
+                  "title": "Manufacture of solar cells, solar panels and photovoltaic inverters"
+                },
+                {
+                  "class_code": "2619",
+                  "title": "Manufacture of other electronic components and boards"
+                }
+              ]
+            },
+            {
+              "group_code": "262",
+              "title": "Manufacture of computers and peripheral equipment",
+              "classes": [
+                {
+                  "class_code": "2620",
+                  "title": "Manufacture of computers and peripheral equipment"
+                }
+              ]
+            },
+            {
+              "group_code": "263",
+              "title": "Manufacture of communication equipment",
+              "classes": [
+                {
+                  "class_code": "2630",
+                  "title": "Manufacture of communication equipment"
+                }
+              ]
+            },
+            {
+              "group_code": "264",
+              "title": "Manufacture of consumer electronics",
+              "classes": [
+                {
+                  "class_code": "2640",
+                  "title": "Manufacture of consumer electronics"
+                }
+              ]
+            },
+            {
+              "group_code": "265",
+              "title": "Manufacture of measuring, testing, navigating and control equipment; watches and clocks",
+              "classes": [
+                {
+                  "class_code": "2651",
+                  "title": "Manufacture of measuring, testing, navigating and control equipment"
+                },
+                {
+                  "class_code": "2652",
+                  "title": "Manufacture of watches and clocks"
+                }
+              ]
+            },
+            {
+              "group_code": "266",
+              "title": "Manufacture of irradiation, electromedical and electrotherapeutic equipment",
+              "classes": [
+                {
+                  "class_code": "2660",
+                  "title": "Manufacture of irradiation, electromedical and electrotherapeutic equipment"
+                }
+              ]
+            },
+            {
+              "group_code": "267",
+              "title": "Manufacture of optical instruments and photographic equipment",
+              "classes": [
+                {
+                  "class_code": "2670",
+                  "title": "Manufacture of optical instruments and photographic equipment"
+                }
+              ]
+            },
+            {
+              "group_code": "268",
+              "title": "Manufacture of magnetic and optical media",
+              "classes": [
+                {
+                  "class_code": "2680",
+                  "title": "Manufacture of magnetic and optical media"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "division_code": "27",
+          "title": "Manufacture of electrical equipment",
+          "groups": [
+            {
+              "group_code": "271",
+              "title": "Manufacture of electric motors, generators, transformers and electricity distribution and control apparatus",
+              "classes": [
+                {
+                  "class_code": "2710",
+                  "title": "Manufacture of electric motors, generators, transformers and electricity distribution and control apparatus"
+                }
+              ]
+            },
+            {
+              "group_code": "272",
+              "title": "Manufacture of batteries and accumulators",
+              "classes": [
+                {
+                  "class_code": "2720",
+                  "title": "Manufacture of batteries and accumulators"
+                }
+              ]
+            },
+            {
+              "group_code": "273",
+              "title": "Manufacture of wiring and wiring devices",
+              "classes": [
+                {
+                  "class_code": "2731",
+                  "title": "Manufacture of fibre optic cables"
+                },
+                {
+                  "class_code": "2732",
+                  "title": "Manufacture of other electronic and electric wires and cables"
+                },
+                {
+                  "class_code": "2733",
+                  "title": "Manufacture of wiring devices"
+                }
+              ]
+            },
+            {
+              "group_code": "274",
+              "title": "Manufacture of lighting equipment",
+              "classes": [
+                {
+                  "class_code": "2740",
+                  "title": "Manufacture of lighting equipment"
+                }
+              ]
+            },
+            {
+              "group_code": "275",
+              "title": "Manufacture of domestic appliances",
+              "classes": [
+                {
+                  "class_code": "2750",
+                  "title": "Manufacture of domestic appliances"
+                }
+              ]
+            },
+            {
+              "group_code": "279",
+              "title": "Manufacture of other electrical equipment",
+              "classes": [
+                {
+                  "class_code": "2790",
+                  "title": "Manufacture of other electrical equipment"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "division_code": "28",
+          "title": "Manufacture of machinery and equipment n.e.c.",
+          "groups": [
+            {
+              "group_code": "281",
+              "title": "Manufacture of general-purpose machinery",
+              "classes": [
+                {
+                  "class_code": "2811",
+                  "title": "Manufacture of engines and turbines, except aircraft, vehicle and cycle engines"
+                },
+                {
+                  "class_code": "2812",
+                  "title": "Manufacture of fluid power equipment"
+                },
+                {
+                  "class_code": "2813",
+                  "title": "Manufacture of other pumps, compressors, taps and valves"
+                },
+                {
+                  "class_code": "2814",
+                  "title": "Manufacture of bearings, gears, gearing and driving elements"
+                },
+                {
+                  "class_code": "2815",
+                  "title": "Manufacture of ovens, furnaces and permanent household heating equipment"
+                },
+                {
+                  "class_code": "2816",
+                  "title": "Manufacture of lifting and handling equipment"
+                },
+                {
+                  "class_code": "2817",
+                  "title": "Manufacture of office machinery and equipment (except computers and peripheral equipment)"
+                },
+                {
+                  "class_code": "2818",
+                  "title": "Manufacture of power-driven hand tools"
+                },
+                {
+                  "class_code": "2819",
+                  "title": "Manufacture of other general-purpose machinery"
+                }
+              ]
+            },
+            {
+              "group_code": "282",
+              "title": "Manufacture of special-purpose machinery",
+              "classes": [
+                {
+                  "class_code": "2821",
+                  "title": "Manufacture of agricultural and forestry machinery"
+                },
+                {
+                  "class_code": "2822",
+                  "title": "Manufacture of metal-forming machinery and machine tools"
+                },
+                {
+                  "class_code": "2823",
+                  "title": "Manufacture of machinery for metallurgy"
+                },
+                {
+                  "class_code": "2824",
+                  "title": "Manufacture of machinery for mining, quarrying and construction"
+                },
+                {
+                  "class_code": "2825",
+                  "title": "Manufacture of machinery for food, beverage and tobacco processing"
+                },
+                {
+                  "class_code": "2826",
+                  "title": "Manufacture of machinery for textile, apparel and leather production"
+                },
+                {
+                  "class_code": "2829",
+                  "title": "Manufacture of other special-purpose machinery"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "division_code": "29",
+          "title": "Manufacture of motor vehicles, trailers and semi-trailers",
+          "groups": [
+            {
+              "group_code": "291",
+              "title": "Manufacture of motor vehicles",
+              "classes": [
+                {
+                  "class_code": "2910",
+                  "title": "Manufacture of motor vehicles"
+                }
+              ]
+            },
+            {
+              "group_code": "292",
+              "title": "Manufacture of bodies (coachwork) for motor vehicles; manufacture of trailers and semi-trailers",
+              "classes": [
+                {
+                  "class_code": "2920",
+                  "title": "Manufacture of bodies (coachwork) for motor vehicles; manufacture of trailers and semi-trailers"
+                }
+              ]
+            },
+            {
+              "group_code": "293",
+              "title": "Manufacture of parts and accessories for motor vehicles",
+              "classes": [
+                {
+                  "class_code": "2930",
+                  "title": "Manufacture of parts and accessories for motor vehicles"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "division_code": "30",
+          "title": "Manufacture of other transport equipment",
+          "groups": [
+            {
+              "group_code": "301",
+              "title": "Building of ships and boats",
+              "classes": [
+                {
+                  "class_code": "3011",
+                  "title": "Building of ships and floating structures"
+                },
+                {
+                  "class_code": "3012",
+                  "title": "Building of pleasure and sporting boats"
+                }
+              ]
+            },
+            {
+              "group_code": "302",
+              "title": "Manufacture of railway locomotives and rolling stock",
+              "classes": [
+                {
+                  "class_code": "3020",
+                  "title": "Manufacture of railway locomotives and rolling stock"
+                }
+              ]
+            },
+            {
+              "group_code": "303",
+              "title": "Manufacture of air and spacecraft and related machinery",
+              "classes": [
+                {
+                  "class_code": "3030",
+                  "title": "Manufacture of air and spacecraft and related machinery"
+                }
+              ]
+            },
+            {
+              "group_code": "304",
+              "title": "Manufacture of military fighting vehicles",
+              "classes": [
+                {
+                  "class_code": "3040",
+                  "title": "Manufacture of military fighting vehicles"
+                }
+              ]
+            },
+            {
+              "group_code": "309",
+              "title": "Manufacture of transport equipment n.e.c.",
+              "classes": [
+                {
+                  "class_code": "3091",
+                  "title": "Manufacture of motorcycles"
+                },
+                {
+                  "class_code": "3092",
+                  "title": "Manufacture of bicycles and invalid carriages"
+                },
+                {
+                  "class_code": "3099",
+                  "title": "Manufacture of other transport equipment n.e.c."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "division_code": "31",
+          "title": "Manufacture of furniture",
+          "groups": [
+            {
+              "group_code": "310",
+              "title": "Manufacture of furniture",
+              "classes": [
+                {
+                  "class_code": "3101",
+                  "title": "Manufacture of wooden furniture"
+                },
+                {
+                  "class_code": "3102",
+                  "title": "Manufacture of other furniture"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "division_code": "32",
+          "title": "Other manufacturing",
+          "groups": [
+            {
+              "group_code": "321",
+              "title": "Manufacture of jewellery, bijouterie and related articles",
+              "classes": [
+                {
+                  "class_code": "3211",
+                  "title": "Manufacture of jewellery and related articles"
+                },
+                {
+                  "class_code": "3212",
+                  "title": "Manufacture of imitation jewellery and related articles"
+                }
+              ]
+            },
+            {
+              "group_code": "322",
+              "title": "Manufacture of musical instruments",
+              "classes": [
+                {
+                  "class_code": "3220",
+                  "title": "Manufacture of musical instruments"
+                }
+              ]
+            },
+            {
+              "group_code": "323",
+              "title": "Manufacture of sports goods",
+              "classes": [
+                {
+                  "class_code": "3230",
+                  "title": "Manufacture of sports goods"
+                }
+              ]
+            },
+            {
+              "group_code": "324",
+              "title": "Manufacture of games and toys",
+              "classes": [
+                {
+                  "class_code": "3240",
+                  "title": "Manufacture of games and toys"
+                }
+              ]
+            },
+            {
+              "group_code": "325",
+              "title": "Manufacture of medical and dental instruments and supplies",
+              "classes": [
+                {
+                  "class_code": "3250",
+                  "title": "Manufacture of medical and dental instruments and supplies"
+                }
+              ]
+            },
+            {
+              "group_code": "329",
+              "title": "Other manufacturing n.e.c.",
+              "classes": [
+                {
+                  "class_code": "3290",
+                  "title": "Other manufacturing n.e.c."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "division_code": "33",
+          "title": "Repair, maintenance and installation of machinery and equipment",
+          "groups": [
+            {
+              "group_code": "331",
+              "title": "Repair and maintenance of fabricated metal products, machinery and equipment",
+              "classes": [
+                {
+                  "class_code": "3311",
+                  "title": "Repair and maintenance of fabricated metal products"
+                },
+                {
+                  "class_code": "3312",
+                  "title": "Repair and maintenance of machinery"
+                },
+                {
+                  "class_code": "3313",
+                  "title": "Repair and maintenance of electronic and optical equipment"
+                },
+                {
+                  "class_code": "3314",
+                  "title": "Repair and maintenance of electrical equipment"
+                },
+                {
+                  "class_code": "3315",
+                  "title": "Repair and maintenance of transport equipment, except motor vehicles"
+                },
+                {
+                  "class_code": "3319",
+                  "title": "Repair and maintenance of other equipment"
+                }
+              ]
+            },
+            {
+              "group_code": "332",
+              "title": "Installation of industrial machinery and equipment",
+              "classes": [
+                {
+                  "class_code": "3320",
+                  "title": "Installation of industrial machinery and equipment"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section_code": "D",
+      "title": "Electricity, gas, steam and air conditioning supply",
+      "divisions": [
+        {
+          "division_code": "35",
+          "title": "Electricity, gas, steam and air conditioning supply",
+          "groups": [
+            {
+              "group_code": "351",
+              "title": "Electric power generation, transmission and distribution activities",
+              "classes": [
+                {
+                  "class_code": "3511",
+                  "title": "Electric power generation activities from non-renewable sources"
+                },
+                {
+                  "class_code": "3512",
+                  "title": "Electric power generation activities from renewable sources"
+                },
+                {
+                  "class_code": "3513",
+                  "title": "Electric power transmission and distribution activities"
+                }
+              ]
+            },
+            {
+              "group_code": "352",
+              "title": "Manufacture of gas; distribution of gaseous fuels through mains",
+              "classes": [
+                {
+                  "class_code": "3520",
+                  "title": "Manufacture of gas; distribution of gaseous fuels through mains"
+                }
+              ]
+            },
+            {
+              "group_code": "353",
+              "title": "Steam and air conditioning supply",
+              "classes": [
+                {
+                  "class_code": "3530",
+                  "title": "Steam and air conditioning supply"
+                }
+              ]
+            },
+            {
+              "group_code": "354",
+              "title": "Activities of brokers and agents for electric power and natural gas",
+              "classes": [
+                {
+                  "class_code": "3540",
+                  "title": "Activities of brokers and agents for electric power and natural gas"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section_code": "E",
+      "title": "Water supply; sewerage, waste management and remediation activities",
+      "divisions": [
+        {
+          "division_code": "36",
+          "title": "Water collection, treatment and supply",
+          "groups": [
+            {
+              "group_code": "360",
+              "title": "Water collection, treatment and supply",
+              "classes": [
+                {
+                  "class_code": "3600",
+                  "title": "Water collection, treatment and supply"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "division_code": "37",
+          "title": "Sewerage",
+          "groups": [
+            {
+              "group_code": "370",
+              "title": "Sewerage",
+              "classes": [
+                {
+                  "class_code": "3700",
+                  "title": "Sewerage"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "division_code": "38",
+          "title": "Waste collection, treatment and disposal, and recovery activities",
+          "groups": [
+            {
+              "group_code": "381",
+              "title": "Waste collection activities",
+              "classes": [
+                {
+                  "class_code": "3811",
+                  "title": "Collection of non-hazardous waste"
+                },
+                {
+                  "class_code": "3812",
+                  "title": "Collection of hazardous waste"
+                }
+              ]
+            },
+            {
+              "group_code": "382",
+              "title": "Waste treatment and disposal",
+              "classes": [
+                {
+                  "class_code": "3821",
+                  "title": "Treatment and disposal of non-hazardous waste"
+                },
+                {
+                  "class_code": "3822",
+                  "title": "Treatment and disposal of hazardous waste"
+                }
+              ]
+            },
+            {
+              "group_code": "383",
+              "title": "Materials and other waste recovery",
+              "classes": [
+                {
+                  "class_code": "3830",
+                  "title": "Materials and other waste recovery"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "division_code": "39",
+          "title": "Remediation and other waste management service activities",
+          "groups": [
+            {
+              "group_code": "390",
+              "title": "Remediation and other waste management service activities",
+              "classes": [
+                {
+                  "class_code": "3900",
+                  "title": "Remediation and other waste management service activities"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section_code": "F",
+      "title": "Construction",
+      "divisions": [
+        {
+          "division_code": "41",
+          "title": "Construction of residential and non-residential buildings",
+          "groups": [
+            {
+              "group_code": "410",
+              "title": "Construction of residential and non-residential buildings",
+              "classes": [
+                {
+                  "class_code": "4100",
+                  "title": "Construction of residential and non-residential buildings"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "division_code": "42",
+          "title": "Civil engineering",
+          "groups": [
+            {
+              "group_code": "421",
+              "title": "Construction of roads and railways",
+              "classes": [
+                {
+                  "class_code": "4210",
+                  "title": "Construction of roads and railways"
+                }
+              ]
+            },
+            {
+              "group_code": "422",
+              "title": "Construction of utility projects",
+              "classes": [
+                {
+                  "class_code": "4220",
+                  "title": "Construction of utility projects"
+                }
+              ]
+            },
+            {
+              "group_code": "429",
+              "title": "Construction of other civil engineering projects",
+              "classes": [
+                {
+                  "class_code": "4290",
+                  "title": "Construction of other civil engineering projects"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "division_code": "43",
+          "title": "Specialized construction activities",
+          "groups": [
+            {
+              "group_code": "431",
+              "title": "Demolition and site preparation",
+              "classes": [
+                {
+                  "class_code": "4311",
+                  "title": "Demolition"
+                },
+                {
+                  "class_code": "4312",
+                  "title": "Site preparation"
+                }
+              ]
+            },
+            {
+              "group_code": "432",
+              "title": "Electrical, plumbing and other construction installation activities",
+              "classes": [
+                {
+                  "class_code": "4321",
+                  "title": "Electrical installation"
+                },
+                {
+                  "class_code": "4322",
+                  "title": "Plumbing, heat and air-conditioning installation"
+                },
+                {
+                  "class_code": "4329",
+                  "title": "Other construction installation"
+                }
+              ]
+            },
+            {
+              "group_code": "433",
+              "title": "Building completion and finishing",
+              "classes": [
+                {
+                  "class_code": "4330",
+                  "title": "Building completion and finishing"
+                }
+              ]
+            },
+            {
+              "group_code": "434",
+              "title": "Intermediation service activities for specialized construction services",
+              "classes": [
+                {
+                  "class_code": "4340",
+                  "title": "Intermediation service activities for specialized construction services"
+                }
+              ]
+            },
+            {
+              "group_code": "439",
+              "title": "Other specialized construction activities",
+              "classes": [
+                {
+                  "class_code": "4390",
+                  "title": "Other specialized construction activities"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section_code": "G",
+      "title": "Wholesale and retail trade",
+      "divisions": [
+        {
+          "division_code": "46",
+          "title": "Wholesale trade",
+          "groups": [
+            {
+              "group_code": "461",
+              "title": "Wholesale on a fee or contract basis",
+              "classes": [
+                {
+                  "class_code": "4610",
+                  "title": "Wholesale on a fee or contract basis"
+                }
+              ]
+            },
+            {
+              "group_code": "462",
+              "title": "Wholesale of agricultural raw materials and live animals",
+              "classes": [
+                {
+                  "class_code": "4620",
+                  "title": "Wholesale of agricultural raw materials and live animals"
+                }
+              ]
+            },
+            {
+              "group_code": "463",
+              "title": "Wholesale of food, beverages and tobacco",
+              "classes": [
+                {
+                  "class_code": "4630",
+                  "title": "Wholesale of food, beverages and tobacco"
+                }
+              ]
+            },
+            {
+              "group_code": "464",
+              "title": "Wholesale of household goods",
+              "classes": [
+                {
+                  "class_code": "4641",
+                  "title": "Wholesale of textiles, clothing and footwear"
+                },
+                {
+                  "class_code": "4642",
+                  "title": "Wholesale of household, office and shop furniture, carpets and lighting equipment"
+                },
+                {
+                  "class_code": "4649",
+                  "title": "Wholesale of other household goods"
+                }
+              ]
+            },
+            {
+              "group_code": "465",
+              "title": "Wholesale of machinery, equipment and supplies",
+              "classes": [
+                {
+                  "class_code": "4651",
+                  "title": "Wholesale of computers, computer peripheral equipment and software"
+                },
+                {
+                  "class_code": "4652",
+                  "title": "Wholesale of electronic and telecommunications equipment and parts"
+                },
+                {
+                  "class_code": "4653",
+                  "title": "Wholesale of agricultural machinery, equipment and supplies"
+                },
+                {
+                  "class_code": "4659",
+                  "title": "Wholesale of other machinery and equipment"
+                }
+              ]
+            },
+            {
+              "group_code": "466",
+              "title": "Wholesale of motor vehicles, motorcycles and related parts and accessories",
+              "classes": [
+                {
+                  "class_code": "4661",
+                  "title": "Wholesale of motor vehicles"
+                },
+                {
+                  "class_code": "4662",
+                  "title": "Wholesale of motor vehicle parts and accessories"
+                },
+                {
+                  "class_code": "4663",
+                  "title": "Wholesale of motorcycles, motorcycle parts and accessories"
+                }
+              ]
+            },
+            {
+              "group_code": "467",
+              "title": "Other specialized wholesale",
+              "classes": [
+                {
+                  "class_code": "4671",
+                  "title": "Wholesale of solid, liquid and gaseous fuels and related products"
+                },
+                {
+                  "class_code": "4672",
+                  "title": "Wholesale of metals and metal ores"
+                },
+                {
+                  "class_code": "4673",
+                  "title": "Wholesale of construction materials, hardware, plumbing and heating equipment and supplies"
+                },
+                {
+                  "class_code": "4679",
+                  "title": "Wholesale of chemicals, waste and scrap and other products n.e.c."
+                }
+              ]
+            },
+            {
+              "group_code": "469",
+              "title": "Non-specialized wholesale trade",
+              "classes": [
+                {
+                  "class_code": "4690",
+                  "title": "Non-specialized wholesale trade"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "division_code": "47",
+          "title": "Retail trade",
+          "groups": [
+            {
+              "group_code": "471",
+              "title": "Non-specialized retail sale",
+              "classes": [
+                {
+                  "class_code": "4711",
+                  "title": "Non-specialized retail sale with food, beverages or tobacco predominating"
+                },
+                {
+                  "class_code": "4719",
+                  "title": "Other non-specialized retail sale"
+                }
+              ]
+            },
+            {
+              "group_code": "472",
+              "title": "Retail sale of food, beverages and tobacco",
+              "classes": [
+                {
+                  "class_code": "4721",
+                  "title": "Retail sale of food"
+                },
+                {
+                  "class_code": "4722",
+                  "title": "Retail sale of beverages"
+                },
+                {
+                  "class_code": "4723",
+                  "title": "Retail sale of tobacco products"
+                }
+              ]
+            },
+            {
+              "group_code": "473",
+              "title": "Retail sale of automotive fuel",
+              "classes": [
+                {
+                  "class_code": "4730",
+                  "title": "Retail sale of automotive fuel"
+                }
+              ]
+            },
+            {
+              "group_code": "474",
+              "title": "Retail sale of information and communication equipment",
+              "classes": [
+                {
+                  "class_code": "4740",
+                  "title": "Retail sale of information and communication equipment"
+                }
+              ]
+            },
+            {
+              "group_code": "475",
+              "title": "Retail sale of other household equipment",
+              "classes": [
+                {
+                  "class_code": "4751",
+                  "title": "Retail sale of textiles"
+                },
+                {
+                  "class_code": "4752",
+                  "title": "Retail sale of hardware, building materials, paints and glass"
+                },
+                {
+                  "class_code": "4753",
+                  "title": "Retail sale of carpets, rugs, wall and floor coverings"
+                },
+                {
+                  "class_code": "4759",
+                  "title": "Retail sale of electrical household appliances, furniture, lighting equipment and other household articles"
+                }
+              ]
+            },
+            {
+              "group_code": "476",
+              "title": "Retail sale of cultural and recreational goods",
+              "classes": [
+                {
+                  "class_code": "4761",
+                  "title": "Retail sale of books, newspapers, stationery and office supplies"
+                },
+                {
+                  "class_code": "4762",
+                  "title": "Retail sale of sporting equipment"
+                },
+                {
+                  "class_code": "4763",
+                  "title": "Retail sale of games and toys"
+                },
+                {
+                  "class_code": "4769",
+                  "title": "Retail sale of cultural and recreational goods n.e.c."
+                }
+              ]
+            },
+            {
+              "group_code": "477",
+              "title": "Retail sale of other goods, except motor vehicles and motorcycles",
+              "classes": [
+                {
+                  "class_code": "4771",
+                  "title": "Retail sale of clothing, footwear and leather articles"
+                },
+                {
+                  "class_code": "4772",
+                  "title": "Retail sale of pharmaceutical and medical goods, cosmetic and toilet articles"
+                },
+                {
+                  "class_code": "4773",
+                  "title": "Retail sale of other new goods n.e.c."
+                },
+                {
+                  "class_code": "4774",
+                  "title": "Retail sale of second-hand goods"
+                }
+              ]
+            },
+            {
+              "group_code": "478",
+              "title": "Retail sale of motor vehicles, motorcycles and related parts and accessories",
+              "classes": [
+                {
+                  "class_code": "4781",
+                  "title": "Retail sale of motor vehicles"
+                },
+                {
+                  "class_code": "4782",
+                  "title": "Retail sale of motor vehicle parts and accessories"
+                },
+                {
+                  "class_code": "4783",
+                  "title": "Retail sale of motorcycles, motorcycles parts and accessories"
+                }
+              ]
+            },
+            {
+              "group_code": "479",
+              "title": "Intermediation service activities for retail sale",
+              "classes": [
+                {
+                  "class_code": "4790",
+                  "title": "Intermediation service activities for retail sale"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section_code": "H",
+      "title": "Transportation and storage",
+      "divisions": [
+        {
+          "division_code": "49",
+          "title": "Land transport and transport via pipelines",
+          "groups": [
+            {
+              "group_code": "491",
+              "title": "Transport via railways",
+              "classes": [
+                {
+                  "class_code": "4911",
+                  "title": "Passenger rail transport, interurban"
+                },
+                {
+                  "class_code": "4912",
+                  "title": "Freight rail transport"
+                }
+              ]
+            },
+            {
+              "group_code": "492",
+              "title": "Other land transport",
+              "classes": [
+                {
+                  "class_code": "4921",
+                  "title": "Urban and suburban passenger land transport"
+                },
+                {
+                  "class_code": "4922",
+                  "title": "Other passenger land transport"
+                },
+                {
+                  "class_code": "4923",
+                  "title": "Freight transport by road"
+                }
+              ]
+            },
+            {
+              "group_code": "493",
+              "title": "Transport via pipeline",
+              "classes": [
+                {
+                  "class_code": "4930",
+                  "title": "Transport via pipeline"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "division_code": "50",
+          "title": "Water transport",
+          "groups": [
+            {
+              "group_code": "501",
+              "title": "Sea and coastal water transport",
+              "classes": [
+                {
+                  "class_code": "5011",
+                  "title": "Sea and coastal passenger water transport"
+                },
+                {
+                  "class_code": "5012",
+                  "title": "Sea and coastal freight water transport"
+                }
+              ]
+            },
+            {
+              "group_code": "502",
+              "title": "Inland water transport",
+              "classes": [
+                {
+                  "class_code": "5021",
+                  "title": "Inland passenger water transport"
+                },
+                {
+                  "class_code": "5022",
+                  "title": "Inland freight water transport"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "division_code": "51",
+          "title": "Air transport",
+          "groups": [
+            {
+              "group_code": "511",
+              "title": "Passenger air transport",
+              "classes": [
+                {
+                  "class_code": "5110",
+                  "title": "Passenger air transport"
+                }
+              ]
+            },
+            {
+              "group_code": "512",
+              "title": "Freight air transport",
+              "classes": [
+                {
+                  "class_code": "5120",
+                  "title": "Freight air transport"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "division_code": "52",
+          "title": "Warehousing and support activities for transportation",
+          "groups": [
+            {
+              "group_code": "521",
+              "title": "Warehousing and storage",
+              "classes": [
+                {
+                  "class_code": "5210",
+                  "title": "Warehousing and storage"
+                }
+              ]
+            },
+            {
+              "group_code": "522",
+              "title": "Support activities for transportation",
+              "classes": [
+                {
+                  "class_code": "5221",
+                  "title": "Service activities incidental to land transportation"
+                },
+                {
+                  "class_code": "5222",
+                  "title": "Service activities incidental to water transportation"
+                },
+                {
+                  "class_code": "5223",
+                  "title": "Service activities incidental to air transportation"
+                },
+                {
+                  "class_code": "5224",
+                  "title": "Cargo handling"
+                },
+                {
+                  "class_code": "5229",
+                  "title": "Other support activities for transportation"
+                }
+              ]
+            },
+            {
+              "group_code": "523",
+              "title": "Intermediation service activities for transportation",
+              "classes": [
+                {
+                  "class_code": "5231",
+                  "title": "Intermediation service activities for freight transportation"
+                },
+                {
+                  "class_code": "5232",
+                  "title": "Intermediation service activities for passenger transportation"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "division_code": "53",
+          "title": "Postal and courier activities",
+          "groups": [
+            {
+              "group_code": "531",
+              "title": "Postal activities",
+              "classes": [
+                {
+                  "class_code": "5310",
+                  "title": "Postal activities"
+                }
+              ]
+            },
+            {
+              "group_code": "532",
+              "title": "Courier activities",
+              "classes": [
+                {
+                  "class_code": "5320",
+                  "title": "Courier activities"
+                }
+              ]
+            },
+            {
+              "group_code": "533",
+              "title": "Intermediation service activities for postal and courier activities",
+              "classes": [
+                {
+                  "class_code": "5330",
+                  "title": "Intermediation service activities for postal and courier activities"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section_code": "I",
+      "title": "Accommodation and food service activities",
+      "divisions": [
+        {
+          "division_code": "55",
+          "title": "Accommodation",
+          "groups": [
+            {
+              "group_code": "551",
+              "title": "Hotels and similar accommodation activities",
+              "classes": [
+                {
+                  "class_code": "5510",
+                  "title": "Hotels and similar accommodation activities"
+                }
+              ]
+            },
+            {
+              "group_code": "552",
+              "title": "Other short term accommodation activities",
+              "classes": [
+                {
+                  "class_code": "5520",
+                  "title": "Other short term accommodation activities"
+                }
+              ]
+            },
+            {
+              "group_code": "553",
+              "title": "Camping grounds, recreational vehicle parks and trailer parks",
+              "classes": [
+                {
+                  "class_code": "5530",
+                  "title": "Camping grounds, recreational vehicle parks and trailer parks"
+                }
+              ]
+            },
+            {
+              "group_code": "554",
+              "title": "Intermediation service activities for accommodation",
+              "classes": [
+                {
+                  "class_code": "5540",
+                  "title": "Intermediation service activities for accommodation"
+                }
+              ]
+            },
+            {
+              "group_code": "559",
+              "title": "Other accommodation n.e.c.",
+              "classes": [
+                {
+                  "class_code": "5590",
+                  "title": "Other accommodation n.e.c."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "division_code": "56",
+          "title": "Food and beverage service activities",
+          "groups": [
+            {
+              "group_code": "561",
+              "title": "Restaurants and mobile food service activities",
+              "classes": [
+                {
+                  "class_code": "5610",
+                  "title": "Restaurants and mobile food service activities"
+                }
+              ]
+            },
+            {
+              "group_code": "562",
+              "title": "Event catering and other food service activities",
+              "classes": [
+                {
+                  "class_code": "5621",
+                  "title": "Event catering activities"
+                },
+                {
+                  "class_code": "5629",
+                  "title": "Other food service activities"
+                }
+              ]
+            },
+            {
+              "group_code": "563",
+              "title": "Beverage serving activities",
+              "classes": [
+                {
+                  "class_code": "5630",
+                  "title": "Beverage serving activities"
+                }
+              ]
+            },
+            {
+              "group_code": "564",
+              "title": "Intermediation service activities for food and beverage services activities",
+              "classes": [
+                {
+                  "class_code": "5640",
+                  "title": "Intermediation service activities for food and beverage services activities"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section_code": "J",
+      "title": "Publishing, broadcasting, and content production and distribution activities",
+      "divisions": [
+        {
+          "division_code": "58",
+          "title": "Publishing activities",
+          "groups": [
+            {
+              "group_code": "581",
+              "title": "Publishing of books, newspapers, periodicals and other publishing activities",
+              "classes": [
+                {
+                  "class_code": "5811",
+                  "title": "Publishing of books"
+                },
+                {
+                  "class_code": "5812",
+                  "title": "Publishing of newspapers"
+                },
+                {
+                  "class_code": "5813",
+                  "title": "Publishing of journals and periodicals"
+                },
+                {
+                  "class_code": "5819",
+                  "title": "Other publishing activities"
+                }
+              ]
+            },
+            {
+              "group_code": "582",
+              "title": "Software publishing",
+              "classes": [
+                {
+                  "class_code": "5821",
+                  "title": "Publishing of video games"
+                },
+                {
+                  "class_code": "5829",
+                  "title": "Other software publishing"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "division_code": "59",
+          "title": "Motion picture, video and television programme production, sound recording and music publishing activities",
+          "groups": [
+            {
+              "group_code": "591",
+              "title": "Motion picture, video and television programme activities",
+              "classes": [
+                {
+                  "class_code": "5911",
+                  "title": "Motion picture, video and television programme production activities"
+                },
+                {
+                  "class_code": "5912",
+                  "title": "Motion picture, video and television programme post-production activities"
+                },
+                {
+                  "class_code": "5913",
+                  "title": "Motion picture, video and television programme distribution activities"
+                },
+                {
+                  "class_code": "5914",
+                  "title": "Motion picture projection activities"
+                }
+              ]
+            },
+            {
+              "group_code": "592",
+              "title": "Sound recording and music publishing activities",
+              "classes": [
+                {
+                  "class_code": "5920",
+                  "title": "Sound recording and music publishing activities"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "division_code": "60",
+          "title": "Programming, broadcasting, news agency and other content distribution activities",
+          "groups": [
+            {
+              "group_code": "601",
+              "title": "Radio broadcasting and audio distribution activities",
+              "classes": [
+                {
+                  "class_code": "6010",
+                  "title": "Radio broadcasting and audio distribution activities"
+                }
+              ]
+            },
+            {
+              "group_code": "602",
+              "title": "Television programming, broadcasting and video distribution activities",
+              "classes": [
+                {
+                  "class_code": "6020",
+                  "title": "Television programming, broadcasting and video distribution activities"
+                }
+              ]
+            },
+            {
+              "group_code": "603",
+              "title": "News agency and other content distribution activities",
+              "classes": [
+                {
+                  "class_code": "6031",
+                  "title": "News agency activities"
+                },
+                {
+                  "class_code": "6039",
+                  "title": "Social network sites and other content distribution activities"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section_code": "K",
+      "title": "Telecommunications, computer programming, consultancy, computing infrastructure, and other information service activities",
+      "divisions": [
+        {
+          "division_code": "61",
+          "title": "Telecommunications",
+          "groups": [
+            {
+              "group_code": "611",
+              "title": "Wired, wireless, and satellite telecommunication activities",
+              "classes": [
+                {
+                  "class_code": "6110",
+                  "title": "Wired, wireless, and satellite telecommunication activities"
+                }
+              ]
+            },
+            {
+              "group_code": "612",
+              "title": "Telecommunication reselling activities and intermediation service activities for telecommunication",
+              "classes": [
+                {
+                  "class_code": "6120",
+                  "title": "Telecommunication reselling activities and intermediation service activities for telecommunication"
+                }
+              ]
+            },
+            {
+              "group_code": "619",
+              "title": "Other telecommunication activities",
+              "classes": [
+                {
+                  "class_code": "6190",
+                  "title": "Other telecommunication activities"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "division_code": "62",
+          "title": "Computer programming, consultancy and related activities",
+          "groups": [
+            {
+              "group_code": "621",
+              "title": "Computer programming activities",
+              "classes": [
+                {
+                  "class_code": "6211",
+                  "title": "Development of video games, video game software, and video game software tools"
+                },
+                {
+                  "class_code": "6219",
+                  "title": "Other computer programming activities"
+                }
+              ]
+            },
+            {
+              "group_code": "622",
+              "title": "Computer consultancy and computer facilities management activities",
+              "classes": [
+                {
+                  "class_code": "6220",
+                  "title": "Computer consultancy and computer facilities management activities"
+                }
+              ]
+            },
+            {
+              "group_code": "629",
+              "title": "Other information technology and computer service activities",
+              "classes": [
+                {
+                  "class_code": "6290",
+                  "title": "Other information technology and computer service activities"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "division_code": "63",
+          "title": "Computing infrastructure, data processing, hosting, and other information service activities",
+          "groups": [
+            {
+              "group_code": "631",
+              "title": "Computing infrastructure, data processing, hosting and related activities",
+              "classes": [
+                {
+                  "class_code": "6310",
+                  "title": "Computing infrastructure, data processing, hosting and related activities"
+                }
+              ]
+            },
+            {
+              "group_code": "639",
+              "title": "Web search portals activities and other information service activities",
+              "classes": [
+                {
+                  "class_code": "6390",
+                  "title": "Web search portals activities and other information service activities"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section_code": "L",
+      "title": "Financial and insurance activities",
+      "divisions": [
+        {
+          "division_code": "64",
+          "title": "Financial service activities, except insurance and pension funding",
+          "groups": [
+            {
+              "group_code": "641",
+              "title": "Monetary intermediation",
+              "classes": [
+                {
+                  "class_code": "6411",
+                  "title": "Central banking"
+                },
+                {
+                  "class_code": "6419",
+                  "title": "Other monetary intermediation"
+                }
+              ]
+            },
+            {
+              "group_code": "642",
+              "title": "Activities of holding companies and financing conduits",
+              "classes": [
+                {
+                  "class_code": "6421",
+                  "title": "Activities of holding companies"
+                },
+                {
+                  "class_code": "6422",
+                  "title": "Activities of financing conduits"
+                }
+              ]
+            },
+            {
+              "group_code": "643",
+              "title": "Activities of trusts, funds and similar financial entities",
+              "classes": [
+                {
+                  "class_code": "6431",
+                  "title": "Activities of money market funds"
+                },
+                {
+                  "class_code": "6432",
+                  "title": "Activities of non-money market investments funds"
+                },
+                {
+                  "class_code": "6433",
+                  "title": "Activities of trust, estate and agency accounts"
+                }
+              ]
+            },
+            {
+              "group_code": "649",
+              "title": "Other financial service activities, except insurance and pension funding activities",
+              "classes": [
+                {
+                  "class_code": "6491",
+                  "title": "Financial leasing activities"
+                },
+                {
+                  "class_code": "6492",
+                  "title": "International trade financing activities"
+                },
+                {
+                  "class_code": "6493",
+                  "title": "Factoring activities"
+                },
+                {
+                  "class_code": "6494",
+                  "title": "Securitisation activities"
+                },
+                {
+                  "class_code": "6495",
+                  "title": "Other credit granting activities"
+                },
+                {
+                  "class_code": "6499",
+                  "title": "Other financial service activities n.e.c., except insurance and pension funding activities"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "division_code": "65",
+          "title": "Insurance, reinsurance and pension funding, except compulsory social security",
+          "groups": [
+            {
+              "group_code": "651",
+              "title": "Insurance",
+              "classes": [
+                {
+                  "class_code": "6511",
+                  "title": "Life insurance"
+                },
+                {
+                  "class_code": "6512",
+                  "title": "Non-life insurance"
+                }
+              ]
+            },
+            {
+              "group_code": "652",
+              "title": "Reinsurance",
+              "classes": [
+                {
+                  "class_code": "6520",
+                  "title": "Reinsurance"
+                }
+              ]
+            },
+            {
+              "group_code": "653",
+              "title": "Pension funding",
+              "classes": [
+                {
+                  "class_code": "6530",
+                  "title": "Pension funding"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "division_code": "66",
+          "title": "Activities auxiliary to financial service and insurance activities",
+          "groups": [
+            {
+              "group_code": "661",
+              "title": "Activities auxiliary to financial services, except insurance and pension funding",
+              "classes": [
+                {
+                  "class_code": "6611",
+                  "title": "Administration of financial markets"
+                },
+                {
+                  "class_code": "6612",
+                  "title": "Security and commodity contracts brokerage"
+                },
+                {
+                  "class_code": "6619",
+                  "title": "Other activities auxiliary to financial service activities, except insurance and pension funding"
+                }
+              ]
+            },
+            {
+              "group_code": "662",
+              "title": "Activities auxiliary to insurance and pension funding",
+              "classes": [
+                {
+                  "class_code": "6621",
+                  "title": "Risk and damage evaluation"
+                },
+                {
+                  "class_code": "6622",
+                  "title": "Activities of insurance agents and brokers"
+                },
+                {
+                  "class_code": "6629",
+                  "title": "Other activities auxiliary to insurance and pension funding"
+                }
+              ]
+            },
+            {
+              "group_code": "663",
+              "title": "Fund management activities",
+              "classes": [
+                {
+                  "class_code": "6630",
+                  "title": "Fund management activities"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section_code": "M",
+      "title": "Real estate activities",
+      "divisions": [
+        {
+          "division_code": "68",
+          "title": "Real estate activities",
+          "groups": [
+            {
+              "group_code": "681",
+              "title": "Real estate activities with own or leased property",
+              "classes": [
+                {
+                  "class_code": "6810",
+                  "title": "Real estate activities with own or leased property"
+                }
+              ]
+            },
+            {
+              "group_code": "682",
+              "title": "Real estate activities on a fee or contract basis",
+              "classes": [
+                {
+                  "class_code": "6821",
+                  "title": "Intermediation service activities for real estate"
+                },
+                {
+                  "class_code": "6829",
+                  "title": "Other real estate activities on a fee or contract basis"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section_code": "N",
+      "title": "Professional, scientific and technical activities",
+      "divisions": [
+        {
+          "division_code": "69",
+          "title": "Legal and accounting activities",
+          "groups": [
+            {
+              "group_code": "691",
+              "title": "Legal activities",
+              "classes": [
+                {
+                  "class_code": "6910",
+                  "title": "Legal activities"
+                }
+              ]
+            },
+            {
+              "group_code": "692",
+              "title": "Accounting, bookkeeping and auditing activities; tax consultancy",
+              "classes": [
+                {
+                  "class_code": "6920",
+                  "title": "Accounting, bookkeeping and auditing activities; tax consultancy"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "division_code": "70",
+          "title": "Activities of head offices; management consultancy activities",
+          "groups": [
+            {
+              "group_code": "701",
+              "title": "Activities of head offices",
+              "classes": [
+                {
+                  "class_code": "7010",
+                  "title": "Activities of head offices"
+                }
+              ]
+            },
+            {
+              "group_code": "702",
+              "title": "Business and other management consultancy activities",
+              "classes": [
+                {
+                  "class_code": "7020",
+                  "title": "Business and other management consultancy activities"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "division_code": "71",
+          "title": "Architectural and engineering activities; technical testing and analysis",
+          "groups": [
+            {
+              "group_code": "711",
+              "title": "Architectural and engineering, and related technical consultancy activities",
+              "classes": [
+                {
+                  "class_code": "7110",
+                  "title": "Architectural and engineering, and related technical consultancy activities"
+                }
+              ]
+            },
+            {
+              "group_code": "712",
+              "title": "Technical testing and analysis",
+              "classes": [
+                {
+                  "class_code": "7120",
+                  "title": "Technical testing and analysis"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "division_code": "72",
+          "title": "Scientific research and development",
+          "groups": [
+            {
+              "group_code": "721",
+              "title": "Research and experimental development on natural sciences and engineering",
+              "classes": [
+                {
+                  "class_code": "7210",
+                  "title": "Research and experimental development on natural sciences and engineering"
+                }
+              ]
+            },
+            {
+              "group_code": "722",
+              "title": "Research and experimental development on social sciences and humanities",
+              "classes": [
+                {
+                  "class_code": "7220",
+                  "title": "Research and experimental development on social sciences and humanities"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "division_code": "73",
+          "title": "Activities of advertising, market research and public relations",
+          "groups": [
+            {
+              "group_code": "731",
+              "title": "Advertising activities",
+              "classes": [
+                {
+                  "class_code": "7310",
+                  "title": "Advertising activities"
+                }
+              ]
+            },
+            {
+              "group_code": "732",
+              "title": "Market research and public opinion polling activities",
+              "classes": [
+                {
+                  "class_code": "7320",
+                  "title": "Market research and public opinion polling activities"
+                }
+              ]
+            },
+            {
+              "group_code": "733",
+              "title": "Public relations activities",
+              "classes": [
+                {
+                  "class_code": "7330",
+                  "title": "Public relations activities"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "division_code": "74",
+          "title": "Other professional, scientific and technical activities",
+          "groups": [
+            {
+              "group_code": "741",
+              "title": "Specialized design activities",
+              "classes": [
+                {
+                  "class_code": "7410",
+                  "title": "Specialized design activities"
+                }
+              ]
+            },
+            {
+              "group_code": "742",
+              "title": "Photographic activities",
+              "classes": [
+                {
+                  "class_code": "7420",
+                  "title": "Photographic activities"
+                }
+              ]
+            },
+            {
+              "group_code": "743",
+              "title": "Translation and interpretation activities",
+              "classes": [
+                {
+                  "class_code": "7430",
+                  "title": "Translation and interpretation activities"
+                }
+              ]
+            },
+            {
+              "group_code": "749",
+              "title": "Other professional, scientific and technical activities n.e.c.",
+              "classes": [
+                {
+                  "class_code": "7491",
+                  "title": "Patent brokering and marketing service activities"
+                },
+                {
+                  "class_code": "7499",
+                  "title": "All other professional, scientific and technical activities n.e.c."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "division_code": "75",
+          "title": "Veterinary activities",
+          "groups": [
+            {
+              "group_code": "750",
+              "title": "Veterinary activities",
+              "classes": [
+                {
+                  "class_code": "7500",
+                  "title": "Veterinary activities"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section_code": "O",
+      "title": "Administrative and support service activities",
+      "divisions": [
+        {
+          "division_code": "77",
+          "title": "Rental and leasing activities",
+          "groups": [
+            {
+              "group_code": "771",
+              "title": "Rental and leasing of motor vehicles",
+              "classes": [
+                {
+                  "class_code": "7710",
+                  "title": "Rental and leasing of motor vehicles"
+                }
+              ]
+            },
+            {
+              "group_code": "772",
+              "title": "Rental and leasing of personal and household goods",
+              "classes": [
+                {
+                  "class_code": "7721",
+                  "title": "Rental and leasing of recreational and sports goods"
+                },
+                {
+                  "class_code": "7729",
+                  "title": "Rental and leasing of other personal and household goods"
+                }
+              ]
+            },
+            {
+              "group_code": "773",
+              "title": "Rental and leasing of other machinery, equipment and tangible goods",
+              "classes": [
+                {
+                  "class_code": "7730",
+                  "title": "Rental and leasing of other machinery, equipment and tangible goods"
+                }
+              ]
+            },
+            {
+              "group_code": "774",
+              "title": "Leasing of intellectual property and similar products, except copyrighted works",
+              "classes": [
+                {
+                  "class_code": "7740",
+                  "title": "Leasing of intellectual property and similar products, except copyrighted works"
+                }
+              ]
+            },
+            {
+              "group_code": "775",
+              "title": "Intermediation service activities for rental and leasing of tangible goods and non-financial intangible assets",
+              "classes": [
+                {
+                  "class_code": "7751",
+                  "title": "Intermediation service activities for rental and leasing of cars, motorhomes and trailers"
+                },
+                {
+                  "class_code": "7752",
+                  "title": "Intermediation service activities for rental and leasing of other tangible goods and non-financial intangible assets"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "division_code": "78",
+          "title": "Employment activities",
+          "groups": [
+            {
+              "group_code": "781",
+              "title": "Activities of employment placement agencies",
+              "classes": [
+                {
+                  "class_code": "7810",
+                  "title": "Activities of employment placement agencies"
+                }
+              ]
+            },
+            {
+              "group_code": "782",
+              "title": "Temporary employment agency activities and other human resource provisions",
+              "classes": [
+                {
+                  "class_code": "7820",
+                  "title": "Temporary employment agency activities and other human resource provisions"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "division_code": "79",
+          "title": "Travel agency, tour operator, and other travel related activities",
+          "groups": [
+            {
+              "group_code": "791",
+              "title": "Travel agency and tour operator activities",
+              "classes": [
+                {
+                  "class_code": "7911",
+                  "title": "Travel agency activities"
+                },
+                {
+                  "class_code": "7912",
+                  "title": "Tour operator activities"
+                }
+              ]
+            },
+            {
+              "group_code": "799",
+              "title": "Other travel related activities",
+              "classes": [
+                {
+                  "class_code": "7990",
+                  "title": "Other travel related activities"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "division_code": "80",
+          "title": "Investigation and security activities",
+          "groups": [
+            {
+              "group_code": "801",
+              "title": "Investigation and security activities",
+              "classes": [
+                {
+                  "class_code": "8011",
+                  "title": "Investigation and private security activities"
+                },
+                {
+                  "class_code": "8019",
+                  "title": "Security activities n.e.c."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "division_code": "81",
+          "title": "Services to buildings and landscape activities",
+          "groups": [
+            {
+              "group_code": "811",
+              "title": "Combined facilities support activities",
+              "classes": [
+                {
+                  "class_code": "8110",
+                  "title": "Combined facilities support activities"
+                }
+              ]
+            },
+            {
+              "group_code": "812",
+              "title": "Cleaning activities",
+              "classes": [
+                {
+                  "class_code": "8121",
+                  "title": "General cleaning of buildings"
+                },
+                {
+                  "class_code": "8129",
+                  "title": "Other cleaning activities"
+                }
+              ]
+            },
+            {
+              "group_code": "813",
+              "title": "Landscape service activities",
+              "classes": [
+                {
+                  "class_code": "8130",
+                  "title": "Landscape service activities"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "division_code": "82",
+          "title": "Office administrative, office support and other business support activities",
+          "groups": [
+            {
+              "group_code": "821",
+              "title": "Office administrative and support activities",
+              "classes": [
+                {
+                  "class_code": "8210",
+                  "title": "Office administrative and support activities"
+                }
+              ]
+            },
+            {
+              "group_code": "822",
+              "title": "Activities of call centres",
+              "classes": [
+                {
+                  "class_code": "8220",
+                  "title": "Activities of call centres"
+                }
+              ]
+            },
+            {
+              "group_code": "823",
+              "title": "Organization of conventions and trade shows",
+              "classes": [
+                {
+                  "class_code": "8230",
+                  "title": "Organization of conventions and trade shows"
+                }
+              ]
+            },
+            {
+              "group_code": "824",
+              "title": "Intermediation service activities for business support service activities n.e.c., except financial intermediation",
+              "classes": [
+                {
+                  "class_code": "8240",
+                  "title": "Intermediation service activities for business support service activities n.e.c., except financial intermediation"
+                }
+              ]
+            },
+            {
+              "group_code": "829",
+              "title": "Business support service activities n.e.c.",
+              "classes": [
+                {
+                  "class_code": "8291",
+                  "title": "Activities of collection agencies and credit bureaus"
+                },
+                {
+                  "class_code": "8292",
+                  "title": "Packaging activities"
+                },
+                {
+                  "class_code": "8299",
+                  "title": "Other business support service activities n.e.c."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section_code": "P",
+      "title": "Public administration and defence; compulsory social security",
+      "divisions": [
+        {
+          "division_code": "84",
+          "title": "Public administration and defence; compulsory social security",
+          "groups": [
+            {
+              "group_code": "841",
+              "title": "Administration of the State and the economic, social and environmental policies of the community",
+              "classes": [
+                {
+                  "class_code": "8411",
+                  "title": "General public administration activities"
+                },
+                {
+                  "class_code": "8412",
+                  "title": "Regulation of the activities of providing health care, education, cultural services and other social services, excluding social security and environment"
+                },
+                {
+                  "class_code": "8413",
+                  "title": "Regulation of the activities of providing environmental services"
+                },
+                {
+                  "class_code": "8414",
+                  "title": "Regulation of and contribution to more efficient operation of businesses"
+                }
+              ]
+            },
+            {
+              "group_code": "842",
+              "title": "Provision of services to the community as a whole",
+              "classes": [
+                {
+                  "class_code": "8421",
+                  "title": "Foreign affairs"
+                },
+                {
+                  "class_code": "8422",
+                  "title": "Defence activities"
+                },
+                {
+                  "class_code": "8423",
+                  "title": "Public order and safety activities"
+                }
+              ]
+            },
+            {
+              "group_code": "843",
+              "title": "Compulsory social security activities",
+              "classes": [
+                {
+                  "class_code": "8430",
+                  "title": "Compulsory social security activities"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section_code": "Q",
+      "title": "Education",
+      "divisions": [
+        {
+          "division_code": "85",
+          "title": "Education",
+          "groups": [
+            {
+              "group_code": "851",
+              "title": "Pre-primary education",
+              "classes": [
+                {
+                  "class_code": "8510",
+                  "title": "Pre-primary education"
+                }
+              ]
+            },
+            {
+              "group_code": "852",
+              "title": "Primary education",
+              "classes": [
+                {
+                  "class_code": "8520",
+                  "title": "Primary education"
+                }
+              ]
+            },
+            {
+              "group_code": "853",
+              "title": "Secondary and post-secondary non-tertiary education",
+              "classes": [
+                {
+                  "class_code": "8531",
+                  "title": "General secondary education"
+                },
+                {
+                  "class_code": "8532",
+                  "title": "Vocational secondary education"
+                },
+                {
+                  "class_code": "8533",
+                  "title": "Post-secondary non-tertiary education"
+                }
+              ]
+            },
+            {
+              "group_code": "854",
+              "title": "Tertiary education",
+              "classes": [
+                {
+                  "class_code": "8540",
+                  "title": "Tertiary education"
+                }
+              ]
+            },
+            {
+              "group_code": "855",
+              "title": "Other education",
+              "classes": [
+                {
+                  "class_code": "8551",
+                  "title": "Sports and recreation education"
+                },
+                {
+                  "class_code": "8552",
+                  "title": "Cultural education"
+                },
+                {
+                  "class_code": "8553",
+                  "title": "Driving school activities"
+                },
+                {
+                  "class_code": "8559",
+                  "title": "Other education n.e.c."
+                }
+              ]
+            },
+            {
+              "group_code": "856",
+              "title": "Educational support activities",
+              "classes": [
+                {
+                  "class_code": "8561",
+                  "title": "Intermediation service activities for courses and tutors"
+                },
+                {
+                  "class_code": "8569",
+                  "title": "Other educational support activities"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section_code": "R",
+      "title": "Human health and social work activities",
+      "divisions": [
+        {
+          "division_code": "86",
+          "title": "Human health activities",
+          "groups": [
+            {
+              "group_code": "861",
+              "title": "Hospital activities",
+              "classes": [
+                {
+                  "class_code": "8610",
+                  "title": "Hospital activities"
+                }
+              ]
+            },
+            {
+              "group_code": "862",
+              "title": "Medical and dental practice activities",
+              "classes": [
+                {
+                  "class_code": "8620",
+                  "title": "Medical and dental practice activities"
+                }
+              ]
+            },
+            {
+              "group_code": "869",
+              "title": "Other human health activities",
+              "classes": [
+                {
+                  "class_code": "8691",
+                  "title": "Intermediation service activities for medical, dental, and other human health services"
+                },
+                {
+                  "class_code": "8699",
+                  "title": "Other human health activities n.e.c."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "division_code": "87",
+          "title": "Residential care activities",
+          "groups": [
+            {
+              "group_code": "871",
+              "title": "Residential nursing care activities",
+              "classes": [
+                {
+                  "class_code": "8710",
+                  "title": "Residential nursing care activities"
+                }
+              ]
+            },
+            {
+              "group_code": "872",
+              "title": "Residential care activities for persons living with or having a diagnosis of a mental illness or substance abuse",
+              "classes": [
+                {
+                  "class_code": "8720",
+                  "title": "Residential care activities for persons living with or having a diagnosis of a mental illness or substance abuse"
+                }
+              ]
+            },
+            {
+              "group_code": "873",
+              "title": "Residential care activities for older persons or persons with physical disabilities",
+              "classes": [
+                {
+                  "class_code": "8730",
+                  "title": "Residential care activities for older persons or persons with physical disabilities"
+                }
+              ]
+            },
+            {
+              "group_code": "879",
+              "title": "Other residential care activities",
+              "classes": [
+                {
+                  "class_code": "8791",
+                  "title": "Intermediation service activities for residential care activities"
+                },
+                {
+                  "class_code": "8799",
+                  "title": "Other residential care activities n.e.c."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "division_code": "88",
+          "title": "Social work activities without accommodation",
+          "groups": [
+            {
+              "group_code": "881",
+              "title": "Social work activities without accommodation for older persons or persons with disabilities",
+              "classes": [
+                {
+                  "class_code": "8810",
+                  "title": "Social work activities without accommodation for older persons or persons with disabilities"
+                }
+              ]
+            },
+            {
+              "group_code": "889",
+              "title": "Other social work activities without accommodation",
+              "classes": [
+                {
+                  "class_code": "8890",
+                  "title": "Other social work activities without accommodation"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section_code": "S",
+      "title": "Arts, sports and recreation",
+      "divisions": [
+        {
+          "division_code": "90",
+          "title": "Arts creation and performing arts activities",
+          "groups": [
+            {
+              "group_code": "901",
+              "title": "Arts creation activities",
+              "classes": [
+                {
+                  "class_code": "9011",
+                  "title": "Literary creation and musical composition activities"
+                },
+                {
+                  "class_code": "9012",
+                  "title": "Visual arts creation activities"
+                },
+                {
+                  "class_code": "9013",
+                  "title": "Other arts creation activities"
+                }
+              ]
+            },
+            {
+              "group_code": "902",
+              "title": "Activities of performing arts",
+              "classes": [
+                {
+                  "class_code": "9020",
+                  "title": "Activities of performing arts"
+                }
+              ]
+            },
+            {
+              "group_code": "903",
+              "title": "Support activities to arts creation and performing arts",
+              "classes": [
+                {
+                  "class_code": "9031",
+                  "title": "Operation of arts facilities and sites"
+                },
+                {
+                  "class_code": "9039",
+                  "title": "Other support activities to arts creation and performing arts"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "division_code": "91",
+          "title": "Library, archives, museum and other cultural activities",
+          "groups": [
+            {
+              "group_code": "911",
+              "title": "Library and archives activities",
+              "classes": [
+                {
+                  "class_code": "9111",
+                  "title": "Library activities"
+                },
+                {
+                  "class_code": "9112",
+                  "title": "Archives activities"
+                }
+              ]
+            },
+            {
+              "group_code": "912",
+              "title": "Museum, collection, historical site and monument activities",
+              "classes": [
+                {
+                  "class_code": "9121",
+                  "title": "Museum and collection activities"
+                },
+                {
+                  "class_code": "9122",
+                  "title": "Historical site and monument activities"
+                }
+              ]
+            },
+            {
+              "group_code": "913",
+              "title": "Conservation, restoration and other support activities for cultural heritage",
+              "classes": [
+                {
+                  "class_code": "9130",
+                  "title": "Conservation, restoration and other support activities for cultural heritage"
+                }
+              ]
+            },
+            {
+              "group_code": "914",
+              "title": "Botanical and zoological garden and nature reserve activities",
+              "classes": [
+                {
+                  "class_code": "9141",
+                  "title": "Botanical and zoological garden activities"
+                },
+                {
+                  "class_code": "9142",
+                  "title": "Nature reserve activities"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "division_code": "92",
+          "title": "Gambling and betting activities",
+          "groups": [
+            {
+              "group_code": "920",
+              "title": "Gambling and betting activities",
+              "classes": [
+                {
+                  "class_code": "9200",
+                  "title": "Gambling and betting activities"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "division_code": "93",
+          "title": "Sports activities and amusement and recreation activities",
+          "groups": [
+            {
+              "group_code": "931",
+              "title": "Sports activities",
+              "classes": [
+                {
+                  "class_code": "9311",
+                  "title": "Operation of sports facilities"
+                },
+                {
+                  "class_code": "9312",
+                  "title": "Activities of sports clubs"
+                },
+                {
+                  "class_code": "9319",
+                  "title": "Other sports activities"
+                }
+              ]
+            },
+            {
+              "group_code": "932",
+              "title": "Amusement and recreation activities",
+              "classes": [
+                {
+                  "class_code": "9321",
+                  "title": "Activities of amusement parks and theme parks"
+                },
+                {
+                  "class_code": "9329",
+                  "title": "Other amusement and recreation activities"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section_code": "T",
+      "title": "Other service activities",
+      "divisions": [
+        {
+          "division_code": "94",
+          "title": "Activities of membership organizations",
+          "groups": [
+            {
+              "group_code": "941",
+              "title": "Activities of business, employers and professional membership organizations",
+              "classes": [
+                {
+                  "class_code": "9411",
+                  "title": "Activities of business and employers membership organizations"
+                },
+                {
+                  "class_code": "9412",
+                  "title": "Activities of professional membership organizations"
+                }
+              ]
+            },
+            {
+              "group_code": "942",
+              "title": "Activities of trade unions",
+              "classes": [
+                {
+                  "class_code": "9420",
+                  "title": "Activities of trade unions"
+                }
+              ]
+            },
+            {
+              "group_code": "949",
+              "title": "Activities of other membership organizations",
+              "classes": [
+                {
+                  "class_code": "9491",
+                  "title": "Activities of religious organizations"
+                },
+                {
+                  "class_code": "9492",
+                  "title": "Activities of political organizations"
+                },
+                {
+                  "class_code": "9499",
+                  "title": "Activities of other membership organizations n.e.c."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "division_code": "95",
+          "title": "Repair and maintenance of computers, personal and household goods, and motor vehicles and motorcycles",
+          "groups": [
+            {
+              "group_code": "951",
+              "title": "Repair and maintenance of computers and communication equipment",
+              "classes": [
+                {
+                  "class_code": "9510",
+                  "title": "Repair and maintenance of computers and communication equipment"
+                }
+              ]
+            },
+            {
+              "group_code": "952",
+              "title": "Repair and maintenance of personal and household goods",
+              "classes": [
+                {
+                  "class_code": "9521",
+                  "title": "Repair and maintenance of consumer electronics"
+                },
+                {
+                  "class_code": "9522",
+                  "title": "Repair and maintenance of household appliances and home and garden equipment"
+                },
+                {
+                  "class_code": "9523",
+                  "title": "Repair and maintenance of footwear and leather goods"
+                },
+                {
+                  "class_code": "9524",
+                  "title": "Repair and maintenance of furniture and home furnishings"
+                },
+                {
+                  "class_code": "9529",
+                  "title": "Repair and maintenance of other personal and household goods"
+                }
+              ]
+            },
+            {
+              "group_code": "953",
+              "title": "Repair and maintenance of motor vehicles and motorcycles",
+              "classes": [
+                {
+                  "class_code": "9531",
+                  "title": "Repair and maintenance of motor vehicles"
+                },
+                {
+                  "class_code": "9532",
+                  "title": "Repair and maintenance of motorcycles"
+                }
+              ]
+            },
+            {
+              "group_code": "954",
+              "title": "Intermediation service activities for repair and maintenance of computers, personal and household goods, and motor vehicles and motorcycles",
+              "classes": [
+                {
+                  "class_code": "9540",
+                  "title": "Intermediation service activities for repair and maintenance of computers, personal and household goods, and motor vehicles and motorcycles"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "division_code": "96",
+          "title": "Personal service activities",
+          "groups": [
+            {
+              "group_code": "961",
+              "title": "Washing and cleaning of textile and fur products",
+              "classes": [
+                {
+                  "class_code": "9610",
+                  "title": "Washing and cleaning of textile and fur products"
+                }
+              ]
+            },
+            {
+              "group_code": "962",
+              "title": "Hairdressing, beauty treatment, day spa and similar activities",
+              "classes": [
+                {
+                  "class_code": "9621",
+                  "title": "Hairdressing and barber activities"
+                },
+                {
+                  "class_code": "9622",
+                  "title": "Beauty care and other beauty treatment activities"
+                },
+                {
+                  "class_code": "9623",
+                  "title": "Day spa, sauna and steam bath activities"
+                }
+              ]
+            },
+            {
+              "group_code": "963",
+              "title": "Funeral and related activities",
+              "classes": [
+                {
+                  "class_code": "9630",
+                  "title": "Funeral and related activities"
+                }
+              ]
+            },
+            {
+              "group_code": "964",
+              "title": "Intermediation service activities for personal services",
+              "classes": [
+                {
+                  "class_code": "9640",
+                  "title": "Intermediation service activities for personal services"
+                }
+              ]
+            },
+            {
+              "group_code": "969",
+              "title": "Other personal service activities n.e.c.",
+              "classes": [
+                {
+                  "class_code": "9690",
+                  "title": "Other personal service activities n.e.c."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section_code": "U",
+      "title": "Activities of households as employers; undifferentiated goods- and services-producing activities of households for own use",
+      "divisions": [
+        {
+          "division_code": "97",
+          "title": "Activities of households as employers of domestic personnel",
+          "groups": [
+            {
+              "group_code": "970",
+              "title": "Activities of households as employers of domestic personnel",
+              "classes": [
+                {
+                  "class_code": "9700",
+                  "title": "Activities of households as employers of domestic personnel"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "division_code": "98",
+          "title": "Undifferentiated goods- and services-producing activities of private households for own use",
+          "groups": [
+            {
+              "group_code": "981",
+              "title": "Undifferentiated goods-producing activities of private households for own use",
+              "classes": [
+                {
+                  "class_code": "9810",
+                  "title": "Undifferentiated goods-producing activities of private households for own use"
+                }
+              ]
+            },
+            {
+              "group_code": "982",
+              "title": "Undifferentiated service-producing activities of private households for own use",
+              "classes": [
+                {
+                  "class_code": "9820",
+                  "title": "Undifferentiated service-producing activities of private households for own use"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section_code": "V",
+      "title": "Activities of extraterritorial organizations and bodies",
+      "divisions": [
+        {
+          "division_code": "99",
+          "title": "Activities of extraterritorial organizations and bodies",
+          "groups": [
+            {
+              "group_code": "990",
+              "title": "Activities of extraterritorial organizations and bodies",
+              "classes": [
+                {
+                  "class_code": "9900",
+                  "title": "Activities of extraterritorial organizations and bodies"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]

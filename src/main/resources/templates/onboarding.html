@@ -1,0 +1,954 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carbon Tracker - Corporate Profile Setup</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/onboarding.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css">
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌿</text></svg>">
+    <style>
+        /* Custom styles for industry classification dropdowns */
+        .naics-option {
+            padding: 4px 0;
+        }
+        .naics-option .code {
+            font-weight: bold;
+        }
+        .naics-option .sector {
+            font-size: 0.8em;
+        }
+        .naics-option .title {
+            margin-top: 2px;
+        }
+        
+        /* Adjustments for Select2 */
+        .select2-container--default .select2-selection--single {
+            height: 38px;
+            border: 1px solid #ced4da;
+        }
+        .select2-container--default .select2-selection--single .select2-selection__rendered {
+            line-height: 38px;
+        }
+        .select2-container--default .select2-selection--single .select2-selection__arrow {
+            height: 36px;
+        }
+        
+        /* NAICS Search styling */
+        #naicsSearchResults {
+            position: relative;
+            z-index: 1000;
+            max-height: 250px;
+            overflow-y: auto;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+        
+        #naicsSearchResults .list-group-item {
+            cursor: pointer;
+            padding: 0.5rem 1rem;
+        }
+        
+        #naicsSearchResults .list-group-item:hover {
+            background-color: #f8f9fa;
+        }
+        
+        .loading {
+            background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIiBwcmVzZXJ2ZUFzcGVjdFJhdGlvPSJ4TWlkWU1pZCI+PGNpcmNsZSBjeD0iNTAiIGN5PSI1MCIgcj0iMzIiIHN0cm9rZS1kYXNoYXJyYXk9IjUwLjI2NTQ4MjQ1NzQzNjY5NSA1MC4yNjU0ODI0NTc0MzY2OTUiIHN0cm9rZT0iI2RlZTJlNiIgZmlsbD0ibm9uZSIgc3Ryb2tlLXdpZHRoPSI2Ij48YW5pbWF0ZVRyYW5zZm9ybSBhdHRyaWJ1dGVOYW1lPSJ0cmFuc2Zvcm0iIHR5cGU9InJvdGF0ZSIgdmFsdWVzPSIwIDUwIDUwOzE4MCA1MCA1MDszNjAgNTAgNTAiIGtleVRpbWVzPSIwOzAuNTsxIiBkdXI9IjFzIiByZXBlYXRDb3VudD0iaW5kZWZpbml0ZSI+PC9hbmltYXRlVHJhbnNmb3JtPjwvY2lyY2xlPjwvc3ZnPg==');
+            background-repeat: no-repeat;
+            background-position: 98% center;
+            background-size: 20px 20px;
+        }
+    </style>
+</head>
+<body class="bg-light">
+    <div class="container-fluid py-4">
+        <div class="row">
+            <!-- Left sidebar -->
+            <div class="col-md-3 col-lg-2 sidebar bg-dark text-white py-4">
+                <h4 class="ps-3 pb-3"><i class="bi bi-check-square me-2"></i> ComplianceCheck</h4>
+                <h5 class="ps-3 pb-3">Compliance Review</h5>
+                
+                <div class="sidebar-steps">
+                    <div class="step-item">
+                        <div class="step-circle">1</div>
+                        <div class="step-text">Welcome & Overview</div>
+                    </div>
+                    <div class="step-item active">
+                        <div class="step-circle">2</div>
+                        <div class="step-text">Corporate Master Record Setup</div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-circle">3</div>
+                        <div class="step-text">Entity Hierarchy & Sub-Records Creation</div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-circle">4</div>
+                        <div class="step-text">Data Source & Calculation Setup</div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-circle">5</div>
+                        <div class="step-text">Renewable Energy & Offsets Configuration</div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-circle">6</div>
+                        <div class="step-text">Verification, Data Quality, & Uncertainty</div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-circle">7</div>
+                        <div class="step-text">Integration Setup for ERP & External Data Sources</div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-circle">8</div>
+                        <div class="step-text">Final Review & Approval</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Main content -->
+            <div class="col-md-9 col-lg-10 main-content px-4">
+                <div class="progress-header mb-4">
+                    <h6>Step 2 of 8: Corporate Master Record Setup</h6>
+                </div>
+                
+                <h2 class="mb-4">Corporate Master Record Setup</h2>
+                
+                <div class="card mb-4">
+                    <div class="card-body p-4">
+                        <div class="d-flex align-items-center mb-4">
+                            <div class="icon-container me-3">
+                                <i class="bi bi-clipboard-check text-primary fs-3"></i>
+                            </div>
+                            <h3>Welcome to Corporate Profile Setup</h3>
+                        </div>
+                        
+                        <p class="mb-4">This step is crucial for establishing your organization's foundation in the system. The information you provide here will shape how your emissions data is structured and reported.</p>
+                        
+                        <ul class="setup-features">
+                            <li><i class="bi bi-diagram-3 text-primary"></i> Define your corporate structure</li>
+                            <li><i class="bi bi-globe text-primary"></i> Set operational boundaries</li>
+                            <li><i class="bi bi-bar-chart text-primary"></i> Establish reporting hierarchy</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Corporate Identification Form -->
+                <div id="corporateForm">
+                    <div class="card mb-4">
+                        <div class="card-body p-4">
+                            <h4 class="mb-4">1. Corporate Identification & Classification</h4>
+                            
+                            <div class="mb-3">
+                                <label for="parentCompanyId" class="form-label">Parent Company ID</label>
+                                <div class="input-group">
+                                    <input type="text" class="form-control" id="parentCompanyId" placeholder="Enter company ID" required>
+                                    <button class="btn btn-outline-secondary" type="button" id="generateIdBtn">Generate</button>
+                                </div>
+                                <small class="form-text text-muted">Unique identifier for the parent organization</small>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="parentCompanyName" class="form-label">Parent Company Name</label>
+                                <input type="text" class="form-control" id="parentCompanyName" placeholder="Enter legal company name" required>
+                                <small class="form-text text-muted">Full legal name of the parent company</small>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label class="form-label">Industry Classification & Codes</label>
+                                
+                                <div class="card mb-3">
+                                    <div class="card-body">
+                                        <div class="d-flex justify-content-between align-items-center mb-2">
+                                            <label for="naicsCode" class="form-label mb-0">
+                                                <strong>NAICS Code (US / Canada / Mexico)</strong> 
+                                                <i class="bi bi-info-circle text-muted" data-bs-toggle="tooltip" 
+                                                   title="Most U.S. sustainability, EPA & SEC filings use 6-digit NAICS codes"></i>
+                                            </label>
+                                        </div>
+                                        
+                                        <!-- Direct NAICS code search input -->
+                                        <div class="mb-3">
+                                            <div class="input-group">
+                                                <input type="text" class="form-control" id="naicsSearchInput" placeholder="Type to search NAICS code" 
+                                                       autocomplete="off" aria-label="Search NAICS codes">
+                                                <button class="btn btn-outline-secondary" type="button" id="naicsSearchBtn">
+                                                    <i class="bi bi-search"></i>
+                                                </button>
+                                            </div>
+                                            <div id="naicsSearchResults" class="mt-2 d-none">
+                                                <!-- Search results will be populated here -->
+                                            </div>
+                                            <div id="naicsSearchError" class="form-text text-danger mt-2 d-none border border-danger rounded p-2 bg-light"></div>
+                                        </div>
+                                        
+                                        <div class="naics-selector-container">
+                                            <!-- Level 1 NAICS selection (Top Level) -->
+                                            <div class="naics-level mb-2" id="naicsLevel1Container">
+                                                <select class="form-select" id="naicsLevel1" data-level="1">
+                                                    <option value="">Select Sector</option>
+                                                    <!-- Options will be populated by JavaScript -->
+                                                </select>
+                                            </div>
+                                            
+                                            <!-- Level 2 NAICS selection -->
+                                            <div class="naics-level mb-2 d-none" id="naicsLevel2Container">
+                                                <select class="form-select" id="naicsLevel2" data-level="2">
+                                                    <option value="">Select Subsector</option>
+                                                    <!-- Options will be populated by JavaScript -->
+                                                </select>
+                                            </div>
+                                            
+                                            <!-- Level 3 NAICS selection -->
+                                            <div class="naics-level mb-2 d-none" id="naicsLevel3Container">
+                                                <select class="form-select" id="naicsLevel3" data-level="3">
+                                                    <option value="">Select Industry Group</option>
+                                                    <!-- Options will be populated by JavaScript -->
+                                                </select>
+                                            </div>
+                                            
+                                            <!-- Level 4 NAICS selection -->
+                                            <div class="naics-level mb-2 d-none" id="naicsLevel4Container">
+                                                <select class="form-select" id="naicsLevel4" data-level="4">
+                                                    <option value="">Select Industry</option>
+                                                    <!-- Options will be populated by JavaScript -->
+                                                </select>
+                                            </div>
+                                            
+                                            <!-- Level 5 NAICS selection -->
+                                            <div class="naics-level mb-2 d-none" id="naicsLevel5Container">
+                                                <select class="form-select" id="naicsLevel5" data-level="5">
+                                                    <option value="">Select Detail</option>
+                                                    <!-- Options will be populated by JavaScript -->
+                                                </select>
+                                            </div>
+                                        </div>
+                                        
+                                        <!-- Hidden field to store the complete selected NAICS code -->
+                                        <input type="hidden" id="naicsCode" name="naicsCode">
+                                        <div class="mt-2" id="selectedNaicsDisplay">
+                                            <span class="badge bg-secondary d-none" id="selectedNaicsBadge">
+                                                <span id="selectedNaicsCode"></span>
+                                                <span id="selectedNaicsTitle"></span>
+                                                <button type="button" class="btn-close btn-close-white ms-2" id="clearNaicsSelection" aria-label="Clear"></button>
+                                            </span>
+                                        </div>
+                                        
+                                        <!-- Cross-walk suggestions -->
+                                        <div id="crosswalkSuggestions" class="mt-2 d-none">
+                                            <div class="alert alert-light border mb-0">
+                                                <div class="d-flex justify-content-between align-items-center">
+                                                    <div>
+                                                        <small class="text-muted">Based on NAICS selection, we suggest:</small>
+                                                        <div id="suggestedCodes"></div>
+                                                    </div>
+                                                    <div>
+                                                        <button class="btn btn-sm btn-outline-primary" id="acceptSuggestions">Accept</button>
+                                                        <button class="btn btn-sm btn-outline-secondary" id="editSuggestions">Edit</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Advanced Section (SIC and ISIC) in a collapsible accordion -->
+                                <div class="accordion mb-3" id="industryCodesAccordion">
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header" id="additionalCodesHeading">
+                                            <button class="accordion-button" type="button" data-bs-toggle="collapse" 
+                                                    data-bs-target="#additionalCodesCollapse" aria-expanded="true" 
+                                                    aria-controls="additionalCodesCollapse">
+                                                Advanced (Additional Classification Codes)
+                                            </button>
+                                        </h2>
+                                        <div id="additionalCodesCollapse" class="accordion-collapse collapse show" 
+                                             aria-labelledby="additionalCodesHeading" data-bs-parent="#industryCodesAccordion">
+                                            <div class="accordion-body">
+                                                <div class="row">
+                                                    <div class="col-md-6 mb-3">
+                                                        <label for="sicSearchInput" class="form-label">
+                                                            SIC Code (legacy US, 4-digit)
+                                                            <i class="bi bi-info-circle text-muted" data-bs-toggle="tooltip" 
+                                                               title="Required by OSHA and some lenders. 4-digit code."></i>
+                                                        </label>
+                                                        <input type="text" class="form-control" id="sicSearchInput" placeholder="Type to search SIC code">
+                                                        <input type="hidden" id="sicCode" name="sicCode">
+                                                        <div id="sicChipContainer" class="mt-2"></div>
+                                                        <div id="sicSuggestionBox" class="position-relative"></div>
+                                                        <small class="form-text text-muted">Enter a 4-digit SIC code or leave blank for automatic suggestion</small>
+                                                    </div>
+                                                    
+                                                    <div class="col-md-6 mb-3">
+                                                        <label for="isicCode" class="form-label">
+                                                            <i class="bi bi-globe-americas me-1"></i> ISIC Code (UN, 4-digit)
+                                                            <i class="bi bi-info-circle text-muted" data-bs-toggle="tooltip" 
+                                                               title="Used in UN, CDP & many non-US frameworks. 4-digit code."></i>
+                                                        </label>
+                                                        <div class="input-group">
+                                                            <input type="text" class="form-control" id="isicCode" placeholder="e.g., 1920" maxlength="4">
+                                                            <button class="btn btn-outline-secondary" type="button" id="lookupIsicBtn">
+                                                                <i class="bi bi-search"></i>
+                                                            </button>
+                                                        </div>
+                                                        <!-- Add badge display for selected ISIC code -->
+                                                        <div class="mt-2" id="selectedIsicDisplay">
+                                                            <span class="badge bg-secondary d-none" id="selectedIsicBadge">
+                                                                <span id="selectedIsicCode"></span> - 
+                                                                <span id="selectedIsicTitle"></span>
+                                                                <button type="button" class="btn-close btn-close-white ms-2" id="clearIsicSelection" aria-label="Clear"></button>
+                                                            </span>
+                                                        </div>
+                                                        <div id="isicDescription" class="form-text"></div>
+                                                        <small class="text-muted">Enter a 4-digit ISIC code or leave blank for automatic suggestion</small>
+                                                    </div>
+                                                </div>
+                                                <!-- GICS/NACE Multi-select -->
+                                                <div class="row">
+                                                    <div class="col-md-6 mb-3">
+                                                        <label for="gicsCodes" class="form-label">GICS Code(s) (optional)</label>
+                                                        <select class="form-select" id="gicsCodes" multiple>
+                                                            <option value="101010">101010 - Energy</option>
+                                                            <option value="151040">151040 - Metals & Mining</option>
+                                                            <option value="203020">203020 - Transportation</option>
+                                                            <!-- Add more GICS codes as needed -->
+                                                        </select>
+                                                        <small class="form-text text-muted">Select one or more GICS codes if applicable.</small>
+                                                    </div>
+                                                    <div class="col-md-6 mb-3">
+                                                        <label for="naceCodes" class="form-label">NACE Code(s) (optional, hierarchical)</label>
+                                                        <select class="form-select" id="naceCodes" multiple>
+                                                            <option value="A">A – Agriculture, forestry and fishing</option>
+                                                            <option value="A-01">A → 01 – Crop and animal production, hunting and related service activities</option>
+                                                            <option value="A-01-011">A → 01 → 011 – Growing of non-perennial crops</option>
+                                                            <option value="A-01-011-0111">A → 01 → 011 → 0111 – Growing of cereals (except rice), leguminous crops and oil seeds</option>
+                                                            <option value="A-01-011-0112">A → 01 → 011 → 0112 – Growing of rice</option>
+                                                            <option value="A-01-011-0113">A → 01 → 011 → 0113 – Growing of vegetables and melons, roots and tubers</option>
+                                                            <option value="A-01-011-0116">A → 01 → 011 → 0116 – Growing of fibre crops</option>
+                                                            <option value="A-01-011-0119">A → 01 → 011 → 0119 – Growing of other non-perennial crops</option>
+                                                            <option value="A-01-012">A → 01 → 012 – Growing of perennial crops</option>
+                                                            <option value="A-01-012-0126">A → 01 → 012 → 0126 – Growing of oleaginous fruits (e.g., soybeans)</option>
+                                                            <option value="A-01-012-0127">A → 01 → 012 → 0127 – Growing of beverage crops (e.g., coffee, tea, maté and spices)</option>
+                                                            <!-- Add more NACE codes as needed, always showing the full path -->
+                                                        </select>
+                                                        <small class="form-text text-muted">Select one or more NACE codes at any level. Each option shows its full path.</small>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="businessDescription" class="form-label">Business Description</label>
+                                <textarea class="form-control" id="businessDescription" rows="3" placeholder="Describe core operations, markets served, and business model"></textarea>
+                                <small class="form-text text-muted">Brief summary of corporate mission and core operations <span id="descCharCount">0</span>/500 characters</small>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Regions of Operation -->
+                    <div class="card mb-4">
+                        <div class="card-body p-4">
+                            <h4 class="mb-4">2. Regions of Operation</h4>
+                            
+                            <div class="mb-3">
+                                <label class="form-label">Operating Regions & Countries</label>
+                                
+                                <div id="regionsContainer">
+                                    <!-- This will be populated dynamically from country.json -->
+                                    <div class="text-center">
+                                        <div class="spinner-border text-primary" role="status">
+                                            <span class="visually-hidden">Loading regions...</span>
+                                        </div>
+                                        <p class="mt-2">Loading regions and countries...</p>
+                                    </div>
+                                </div>
+                                
+                                <small class="form-text text-muted d-block mb-4">Select regions and countries where your organization operates</small>
+                            </div>
+                            
+                            <div class="mb-4">
+                                <label class="form-label">Headquarters Location</label>
+                                
+                                <div class="mb-3">
+                                    <label for="streetAddress" class="form-label">Street Address</label>
+                                    <input type="text" class="form-control" id="streetAddress" placeholder="Enter street address">
+                                </div>
+                                
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <label for="city" class="form-label">City</label>
+                                        <input type="text" class="form-control" id="city" placeholder="Enter city">
+                                    </div>
+                                    
+                                    <div class="col-md-6 mb-3">
+                                        <label for="country" class="form-label">Country</label>
+                                        <select class="form-select" id="country">
+                                            <option value="">Select country</option>
+                                            <!-- This will be populated dynamically from country.json -->
+                                        </select>
+                                    </div>
+                                </div>
+                                
+                                <div class="card bg-light mb-3">
+                                    <div class="card-body">
+                                        <h6 class="card-title">
+                                            <i class="bi bi-geo"></i> Geographic Coordinates
+                                            <small class="text-muted ms-2">(Auto-populated when you click "Get Coordinates")</small>
+                                        </h6>
+                                        <div id="coordinatesContainer" class="row">
+                                            <div class="col-md-6 mb-2">
+                                                <label for="latitude" class="form-label">Latitude</label>
+                                                <input type="text" class="form-control" id="latitude" placeholder="e.g., 51.5074° N">
+                                            </div>
+                                            
+                                            <div class="col-md-6 mb-2">
+                                                <label for="longitude" class="form-label">Longitude</label>
+                                                <input type="text" class="form-control" id="longitude" placeholder="e.g., 0.1278° W">
+                                            </div>
+                                        </div>
+                                        <small class="form-text text-muted">These coordinates are used for geographic-based emissions calculations and mapping</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- NEW: Combined Reporting & Baseline Section -->
+                    <div class="card mb-4">
+                        <div class="card-body p-4">
+                            <h4 class="mb-4">4. Reporting & Baseline</h4>
+                            
+                            <!-- Reporting Year (First) -->
+                            <div class="mb-4">
+                                <label class="form-label">Reporting Year <span class="text-danger">*</span></label>
+                                <p class="mb-2">Carbon emissions are reported annually. Select your first reporting year now, and you can add additional years later. It's best practice to align your reporting year with your organization's financial accounting period. <a href="#" target="_blank">Learn more.</a></p>
+                                <div class="form-check mb-2">
+                                    <input class="form-check-input" type="radio" name="reportingYearOption" id="calendarYearOption" value="calendar" checked>
+                                    <label class="form-check-label" for="calendarYearOption">
+                                        I'll report the last full calendar year.
+                                    </label>
+                                    <div class="form-text ms-4">This will set your reporting years to go from 01/01 to 12/31 of each calendar year.</div>
+                                </div>
+                                <div class="form-check mb-2">
+                                    <input class="form-check-input" type="radio" name="reportingYearOption" id="customFiscalOption" value="custom">
+                                    <label class="form-check-label" for="customFiscalOption">
+                                        I'll pick my custom fiscal year.
+                                    </label>
+                                    <div class="form-text ms-4">If you select this option, you will need to select your custom start and end date for your reporting years.</div>
+                                </div>
+                                <div id="customFiscalYearFields" class="row mt-3 d-none">
+                                    <div class="col-md-6 mb-3">
+                                        <label for="fiscalStart" class="form-label">Fiscal Year Start Date</label>
+                                        <input type="date" class="form-control" id="fiscalStart">
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label for="fiscalEnd" class="form-label">Fiscal Year End Date</label>
+                                        <input type="date" class="form-control" id="fiscalEnd">
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Baseline Year (Second) -->
+                            <div class="mb-3">
+                                <label for="baselineYear" class="form-label">Baseline Year</label>
+                                <div class="input-group">
+                                    <select class="form-select" id="baselineYear">
+                                        <option value="2022">2022</option>
+                                        <option value="2021">2021</option>
+                                        <option value="2020">2020</option>
+                                        <option value="2019">2019</option>
+                                        <option value="2018">2018</option>
+                                        <option value="2017">2017</option>
+                                        <option value="2016">2016</option>
+                                        <option value="2015">2015</option>
+                                        <option value="2014">2014</option>
+                                        <option value="2013">2013</option>
+                                        <option value="2012">2012</option>
+                                        <option value="2011">2011</option>
+                                        <option value="2010">2010</option>
+                                    </select>
+                                    <button class="btn btn-outline-secondary" type="button" data-bs-toggle="tooltip" title="The baseline year is the reference point against which emissions reductions will be measured.">
+                                        <i class="bi bi-info-circle"></i>
+                                    </button>
+                                </div>
+                                <small class="form-text text-muted">Choose the starting year for emissions tracking and reduction targets</small>
+                            </div>
+                            
+                            <!-- Baseline Adjustment Notes (Third) -->
+                            <div class="mb-3">
+                                <label for="baselineAdjustment" class="form-label">Baseline Adjustment Notes</label>
+                                <div class="input-group">
+                                    <textarea class="form-control" id="baselineAdjustment" rows="3" placeholder="Describe any adjustments made to baseline calculations"></textarea>
+                                    <button class="btn btn-outline-secondary" type="button" data-bs-toggle="tooltip" title="Describe any recalculations or adjustments made to your baseline due to acquisitions, divestitures, or methodology changes.">
+                                        <i class="bi bi-info-circle"></i>
+                                    </button>
+                                </div>
+                                <small class="form-text text-muted">Note any adjustments made to baseline calculations due to organizational changes <span id="adjustmentCharCount">0</span>/500 characters</small>
+                            </div>
+                            
+                            <!-- Preferred Unit System (Fourth - NEW) -->
+                            <div class="mb-3">
+                                <label class="form-label">Preferred Unit System</label>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="unitSystem" id="metricOption" value="metric" checked>
+                                    <label class="form-check-label" for="metricOption">
+                                        Metric (kg, tonnes, km)
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="unitSystem" id="imperialOption" value="imperial">
+                                    <label class="form-check-label" for="imperialOption">
+                                        Imperial (lbs, tons, miles)
+                                    </label>
+                                </div>
+                                <small class="form-text text-muted">Select your preferred measurement system for inputting and displaying data</small>
+                            </div>
+                            
+                            <!-- GWP Horizon (Fifth - NEW) -->
+                            <div class="mb-3">
+                                <label for="gwpHorizon" class="form-label">GWP Horizon</label>
+                                <div class="input-group">
+                                    <select class="form-select" id="gwpHorizon">
+                                        <option value="AR4_100yr" selected>AR4 100 yr</option>
+                                        <option value="AR6_20yr">AR6 20 yr</option>
+                                        <option value="AR4_100year">AR4 100-year</option>
+                                        <option value="AR5_100year">AR5 100-year</option>
+                                        <option value="AR6_20year">AR6 20-year</option>
+                                        <option value="AR6_100year">AR6 100-year</option>
+                                        <option value="SAR_100year">SAR 100-year</option>
+                                        <option value="TAR_100year">TAR 100-year</option>
+                                        <option value="GWP20">GWP20</option>
+                                        <option value="GWP100">GWP100</option>
+                                        <option value="GWP500">GWP500</option>
+                                        <option value="GTP_100year">GTP 100-year</option>
+                                        <option value="GWP_star">GWP*</option>
+                                        <option value="SGWP">SGWP</option>
+                                    </select>
+                                    <button class="btn btn-outline-secondary" type="button" data-bs-toggle="tooltip" title="Global Warming Potential (GWP) values are used to convert various greenhouse gases to CO2 equivalent values. Different GWP horizons reflect different time periods over which climate impacts are measured.">
+                                        <i class="bi bi-info-circle"></i>
+                                    </button>
+                                </div>
+                                <small class="form-text text-muted">Select the GWP methodology to use for greenhouse gas conversions</small>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- NEW: Targets & Commitments Section -->
+                    <div class="card mb-4">
+                        <div class="card-body p-4">
+                            <h4 class="mb-4">5. Targets & Commitments</h4>
+                            
+                            <!-- Net-zero / SBTi committed -->
+                            <div class="mb-3">
+                                <label class="form-label">Commitment Status</label>
+                                <div class="card p-3 mb-2">
+                                    <!-- Net-zero committed -->
+                                    <div class="row align-items-center mb-2">
+                                        <div class="col-md-6">
+                                            <label class="form-label mb-0">Net-zero committed?</label>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-check form-switch">
+                                                <input class="form-check-input" type="checkbox" id="netZeroCommitted" role="switch">
+                                                <label class="form-check-label" for="netZeroCommitted">
+                                                    <span class="text-muted" id="netZeroStatus">Not committed</span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <small class="form-text text-muted mb-3">Indicate if your organization has committed to net-zero targets</small>
+                                    
+                                    <!-- SBTi committed -->
+                                    <div class="row align-items-center">
+                                        <div class="col-md-6">
+                                            <label class="form-label mb-0">SBTi committed?</label>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-check form-switch">
+                                                <input class="form-check-input" type="checkbox" id="sbtiCommitted" role="switch">
+                                                <label class="form-check-label" for="sbtiCommitted">
+                                                    <span class="text-muted" id="sbtiStatus">Not committed</span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <small class="form-text text-muted">Indicate if your organization has committed to Science-Based Targets initiative</small>
+                                </div>
+                            </div>
+                            
+                            <!-- Target Type -->
+                            <div class="mb-3">
+                                <div class="row align-items-center">
+                                    <div class="col-md-6">
+                                        <label class="form-label">Target Type</label>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="btn-group" role="group" aria-label="Target type">
+                                            <input type="radio" class="btn-check" name="targetType" id="absoluteTarget" value="absolute" autocomplete="off" checked>
+                                            <label class="btn btn-outline-primary" for="absoluteTarget">Absolute</label>
+                                            
+                                            <input type="radio" class="btn-check" name="targetType" id="intensityTarget" value="intensity" autocomplete="off">
+                                            <label class="btn btn-outline-primary" for="intensityTarget">Intensity</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <small class="form-text text-muted">Absolute targets focus on total emissions reduction. Intensity targets focus on emissions per unit of output.</small>
+                            </div>
+                            
+                            <!-- Target Year & % Reduction -->
+                            <div class="mb-3">
+                                <div class="row align-items-center">
+                                    <div class="col-md-6">
+                                        <label class="form-label">Target Year & % Reduction</label>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="input-group">
+                                            <span class="input-group-text">Year</span>
+                                            <select class="form-select" id="targetYear">
+                                                <option value="2025">2025</option>
+                                                <option value="2030" selected>2030</option>
+                                                <option value="2035">2035</option>
+                                                <option value="2040">2040</option>
+                                                <option value="2045">2045</option>
+                                                <option value="2050">2050</option>
+                                            </select>
+                                            <span class="input-group-text">Reduction</span>
+                                            <input type="number" class="form-control" id="targetPercentage" min="0" max="100" value="30">
+                                            <span class="input-group-text">%</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <small class="form-text text-muted">Set your target year and percentage reduction goal</small>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- NEW: Governance & Contacts Section -->
+                    <div class="card mb-4">
+                        <div class="card-body p-4">
+                            <h4 class="mb-4">6. Governance & Contacts</h4>
+                            
+                            <!-- Sustainability Lead - Updated with separate fields -->
+                            <div class="mb-3">
+                                <label class="form-label">Sustainability Lead</label>
+                                <div class="row mb-2">
+                                    <div class="col-md-4">
+                                        <input type="text" class="form-control" id="sustainabilityLeadName" placeholder="Name">
+                                    </div>
+                                    <div class="col-md-4">
+                                        <input type="email" class="form-control" id="sustainabilityLeadEmail" placeholder="Email">
+                                    </div>
+                                    <div class="col-md-4">
+                                        <input type="tel" class="form-control" id="sustainabilityLeadPhone" placeholder="Phone">
+                                    </div>
+                                </div>
+                                <small class="form-text text-muted">Primary contact for sustainability initiatives and reporting</small>
+                            </div>
+                            
+                            <!-- Finance Lead - Updated with separate fields -->
+                            <div class="mb-3">
+                                <label class="form-label">Finance Lead</label>
+                                <div class="row mb-2">
+                                    <div class="col-md-4">
+                                        <input type="text" class="form-control" id="financeLeadName" placeholder="Name">
+                                    </div>
+                                    <div class="col-md-4">
+                                        <input type="email" class="form-control" id="financeLeadEmail" placeholder="Email">
+                                    </div>
+                                    <div class="col-md-4">
+                                        <input type="tel" class="form-control" id="financeLeadPhone" placeholder="Phone">
+                                    </div>
+                                </div>
+                                <small class="form-text text-muted">Contact responsible for financial oversight of climate initiatives</small>
+                            </div>
+                            
+                            <!-- Board/Committee Oversight -->
+                            <div class="mb-3">
+                                <div class="row align-items-center">
+                                    <div class="col-md-6">
+                                        <label class="form-label">Board/Committee Oversight?</label>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="d-flex">
+                                            <div class="form-check form-switch">
+                                                <input class="form-check-input" type="checkbox" id="boardOversight" role="switch">
+                                                <label class="form-check-label" for="boardOversight">
+                                                    <span class="text-muted" id="boardOversightStatus">No oversight</span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="boardContactInfo" class="mt-2 ms-md-6 col-md-6 offset-md-6 d-none">
+                                    <input type="text" class="form-control" id="boardContact" placeholder="Contact name and details">
+                                    <small class="form-text text-muted">Board or committee member responsible for oversight</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- NEW: Security & Preferences Section -->
+                    <div class="card mb-4">
+                        <div class="card-body p-4">
+                            <h4 class="mb-4">7. Security & Preferences</h4>
+                            
+                            <!-- SSO Domain(s) -->
+                            <div class="mb-3">
+                                <div class="row align-items-center">
+                                    <div class="col-md-6">
+                                        <label class="form-label">SSO Domain(s)</label>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <select class="form-select" id="ssoDomains" multiple>
+                                            <option value="example.com">example.com</option>
+                                            <option value="company.com">company.com</option>
+                                            <option value="org.net">org.net</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <small class="form-text text-muted">Domains authorized for Single Sign-On access</small>
+                            </div>
+                            
+                            <!-- Data Residency -->
+                            <div class="mb-3">
+                                <div class="row align-items-center">
+                                    <div class="col-md-6">
+                                        <label class="form-label">Data Residency</label>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <select class="form-select" id="dataResidency">
+                                            <option value="">Select AWS region</option>
+                                            <option value="us-east-1">US East (N. Virginia)</option>
+                                            <option value="us-west-2">US West (Oregon)</option>
+                                            <option value="eu-west-1">EU (Ireland)</option>
+                                            <option value="eu-central-1">EU (Frankfurt)</option>
+                                            <option value="ap-northeast-1">Asia Pacific (Tokyo)</option>
+                                            <option value="ap-southeast-2">Asia Pacific (Sydney)</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <small class="form-text text-muted">Select preferred region for data storage</small>
+                            </div>
+                            
+                            <!-- Admin User(s) -->
+                            <div class="mb-3">
+                                <div class="row align-items-center">
+                                    <div class="col-md-6">
+                                        <label class="form-label">Admin User(s)</label>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <input type="text" class="form-control" id="adminUsers" placeholder="Enter admin email addresses">
+                                    </div>
+                                </div>
+                                <small class="form-text text-muted" id="adminUsersHelp">Enter email addresses separated by commas or press Enter after each</small>
+                                <div id="adminEmailChips" class="mt-2"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- NEW: Legal & Consent Section -->
+                    <div class="card mb-4">
+                        <div class="card-body p-4">
+                            <h4 class="mb-4">8. Legal & Consent</h4>
+                            
+                            <!-- DPA acceptance -->
+                            <div class="mb-3">
+                                <div class="row align-items-center">
+                                    <div class="col-md-6">
+                                        <label class="form-label">DPA acceptance</label>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="dpaAcceptance">
+                                            <label class="form-check-label" for="dpaAcceptance">
+                                                I accept the <a href="#" target="_blank">Data Processing Agreement</a>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Retention Period -->
+                            <div class="mb-3">
+                                <div class="row align-items-center">
+                                    <div class="col-md-6">
+                                        <label class="form-label">Retention Period</label>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="input-group">
+                                            <input type="number" class="form-control" id="retentionPeriod" min="1" max="10" value="7">
+                                            <span class="input-group-text">years</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <small class="form-text text-muted">Period for which data will be retained after account closure</small>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Action Buttons -->
+                    <div class="d-flex justify-content-between mb-5">
+                        <button type="button" class="btn btn-outline-primary" id="saveBtn">Save Progress</button>
+                        <button type="button" class="btn btn-warning" id="confirmBtn">Confirm & Continue</button>
+                    </div>
+                </div>
+                
+                <!-- Master Record Overview (initially hidden) -->
+                <div id="masterRecordOverview" class="d-none">
+                    <div class="card mb-4">
+                        <div class="card-body p-4">
+                            <h4 class="mb-4">Master Record Overview</h4>
+                            
+                            <div class="overview-section mb-4">
+                                <div class="row mb-2">
+                                    <div class="col-md-3 fw-bold">Company ID:</div>
+                                    <div class="col-md-9" id="overview-companyId"></div>
+                                </div>
+                                <div class="row mb-2">
+                                    <div class="col-md-3 fw-bold">Legal Name:</div>
+                                    <div class="col-md-9" id="overview-legalName"></div>
+                                </div>
+                                <div class="row mb-2">
+                                    <div class="col-md-3 fw-bold">Industry:</div>
+                                    <div class="col-md-9" id="overview-industry"></div>
+                                </div>
+                            </div>
+                            
+                            <h5 class="mb-3">Organizational Structure</h5>
+                            <div class="org-structure mb-4" id="overview-orgStructure">
+                                <!-- Will be filled dynamically -->
+                            </div>
+                            
+                            <h5 class="mb-3">Location & Coverage</h5>
+                            <div class="overview-section mb-4">
+                                <div class="row mb-2">
+                                    <div class="col-md-3 fw-bold">Address:</div>
+                                    <div class="col-md-9" id="overview-address"></div>
+                                </div>
+                                <div class="row mb-2">
+                                    <div class="col-md-3 fw-bold">Coordinates:</div>
+                                    <div class="col-md-9" id="overview-coordinates"></div>
+                                </div>
+                            </div>
+                            
+                            <h5 class="mb-3">Reporting Configuration</h5>
+                            <div class="overview-section mb-4">
+                                <div class="row mb-2">
+                                    <div class="col-md-3 fw-bold">Control Approach:</div>
+                                    <div class="col-md-9">Equity Share Method</div>
+                                </div>
+                                <div class="row mb-2">
+                                    <div class="col-md-3 fw-bold">Baseline Year:</div>
+                                    <div class="col-md-9" id="overview-baselineYear"></div>
+                                </div>
+                                <div class="row mb-2">
+                                    <div class="col-md-3 fw-bold">Reporting Year Type:</div>
+                                    <div class="col-md-9" id="overview-reportingYearType"></div>
+                                </div>
+                                <div class="row mb-2">
+                                    <div class="col-md-3 fw-bold">Unit System:</div>
+                                    <div class="col-md-9" id="overview-unitSystem"></div>
+                                </div>
+                                <div class="row mb-2">
+                                    <div class="col-md-3 fw-bold">GWP Horizon:</div>
+                                    <div class="col-md-9" id="overview-gwpHorizon"></div>
+                                </div>
+                                <ul>
+                                    <li>Subsidiaries: 50% share</li>
+                                    <li>Joint Ventures: 30% share</li>
+                                </ul>
+                            </div>
+                            
+                            <h5 class="mb-3">Targets & Commitments</h5>
+                            <div class="overview-section mb-4">
+                                <div class="row mb-2">
+                                    <div class="col-md-3 fw-bold">Net-zero / SBTi:</div>
+                                    <div class="col-md-9" id="overview-netZeroCommitted"></div>
+                                </div>
+                                <div class="row mb-2">
+                                    <div class="col-md-3 fw-bold">Target Type:</div>
+                                    <div class="col-md-9" id="overview-targetType"></div>
+                                </div>
+                                <div class="row mb-2">
+                                    <div class="col-md-3 fw-bold">Reduction Goal:</div>
+                                    <div class="col-md-9" id="overview-reductionGoal"></div>
+                                </div>
+                            </div>
+                            
+                            <h5 class="mb-3">Governance & Contacts</h5>
+                            <div class="overview-section mb-4">
+                                <div class="row mb-2">
+                                    <div class="col-md-3 fw-bold">Sustainability Lead:</div>
+                                    <div class="col-md-9" id="overview-sustainabilityLead"></div>
+                                </div>
+                                <div class="row mb-2">
+                                    <div class="col-md-3 fw-bold">Finance Lead:</div>
+                                    <div class="col-md-9" id="overview-financeLead"></div>
+                                </div>
+                                <div class="row mb-2">
+                                    <div class="col-md-3 fw-bold">Board Oversight:</div>
+                                    <div class="col-md-9">
+                                        <span id="overview-boardOversight"></span>
+                                        <div id="overview-boardContact" class="mt-1 text-muted"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <h5 class="mb-3">Security & Preferences</h5>
+                            <div class="overview-section mb-4">
+                                <div class="row mb-2">
+                                    <div class="col-md-3 fw-bold">SSO Domain(s):</div>
+                                    <div class="col-md-9" id="overview-ssoDomains"></div>
+                                </div>
+                                <div class="row mb-2">
+                                    <div class="col-md-3 fw-bold">Data Residency:</div>
+                                    <div class="col-md-9" id="overview-dataResidency"></div>
+                                </div>
+                                <div class="row mb-2">
+                                    <div class="col-md-3 fw-bold">Admin User(s):</div>
+                                    <div class="col-md-9" id="overview-adminUsers"></div>
+                                </div>
+                            </div>
+                            
+                            <h5 class="mb-3">Legal & Consent</h5>
+                            <div class="overview-section mb-4">
+                                <div class="row mb-2">
+                                    <div class="col-md-3 fw-bold">DPA Acceptance:</div>
+                                    <div class="col-md-9" id="overview-dpaAcceptance"></div>
+                                </div>
+                                <div class="row mb-2">
+                                    <div class="col-md-3 fw-bold">Retention Period:</div>
+                                    <div class="col-md-9" id="overview-retentionPeriod"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="d-grid">
+                                <button type="button" class="btn btn-success" id="confirmSaveBtn">Confirm & Save</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Back Button -->
+                    <div class="mb-5">
+                        <button type="button" class="btn btn-link" id="backToFormBtn">
+                            <i class="bi bi-arrow-left"></i> Back to form
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <script src="/js/mapbox-geocoding.js"></script>
+    <script src="/js/naics-selector.js"></script>
+    <script src="/js/industry-crosswalk.js"></script>
+    <script src="/js/onboarding.js"></script>
+</body>
+</html> 

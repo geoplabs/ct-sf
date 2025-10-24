@@ -1,0 +1,152 @@
+/* Sidebar styling */
+.sidebar {
+    min-height: 100vh;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar-steps {
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.step-item {
+    display: flex;
+    align-items: center;
+    padding: 0.75rem 0.5rem;
+    margin-bottom: 0.5rem;
+    border-radius: 0.5rem;
+    transition: background-color 0.2s;
+}
+
+.step-item.active {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.step-circle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    background-color: #6c757d;
+    color: white;
+    font-weight: bold;
+    margin-right: 1rem;
+}
+
+.step-item.active .step-circle {
+    background-color: #ffc107;
+    color: #212529;
+}
+
+.step-text {
+    font-size: 0.9rem;
+}
+
+/* Main content area */
+.progress-header {
+    color: #6c757d;
+    border-bottom: 1px solid #dee2e6;
+    padding-bottom: 0.5rem;
+}
+
+/* Setup features list */
+.setup-features {
+    list-style: none;
+    padding-left: 0;
+}
+
+.setup-features li {
+    margin-bottom: 0.75rem;
+    display: flex;
+    align-items: center;
+}
+
+.setup-features li i {
+    margin-right: 0.75rem;
+    font-size: 1.2rem;
+}
+
+/* Form styling */
+.region-selector {
+    border-left: 3px solid #e9ecef;
+    padding-left: 0.75rem;
+}
+
+/* Overview styling */
+.overview-section {
+    background-color: #f8f9fa;
+    padding: 1rem;
+    border-radius: 0.5rem;
+}
+
+.org-structure {
+    padding: 1rem;
+    border: 1px solid #dee2e6;
+    border-radius: 0.5rem;
+}
+
+/* Icons and buttons */
+.icon-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    background-color: rgba(13, 110, 253, 0.1);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .sidebar {
+        min-height: auto;
+    }
+    
+    .step-text {
+        font-size: 0.8rem;
+    }
+}
+
+/* NAICS Code Selector Styles */
+.naics-selector-container {
+    max-width: 100%;
+}
+
+.naics-level {
+    transition: all 0.3s ease;
+}
+
+.naics-level select {
+    background-color: #fff;
+    border: 1px solid #ced4da;
+}
+
+#selectedNaicsDisplay {
+    min-height: 30px;
+}
+
+#selectedNaicsBadge {
+    font-size: 0.9rem;
+    font-weight: normal;
+    padding: 0.5rem 0.75rem;
+    display: inline-flex;
+    align-items: center;
+}
+
+#selectedNaicsBadge .btn-close {
+    font-size: 0.7rem;
+    padding: 0.25rem;
+}
+
+/* Animate the appearance of dropdowns */
+.naics-level.d-none {
+    opacity: 0;
+    transform: translateY(-10px);
+}
+
+.naics-level:not(.d-none) {
+    opacity: 1;
+    transform: translateY(0);
+} 

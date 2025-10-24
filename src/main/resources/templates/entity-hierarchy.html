@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carbon Tracker - Entity Hierarchy & Sub-Records Creation</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌿</text></svg>">
+    <style>
+        /* Sidebar styling */
+        .sidebar {
+            min-height: 100vh;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+            background-color: #4a5568;
+        }
+
+        .sidebar-steps {
+            padding-left: 1rem;
+            padding-right: 1rem;
+        }
+
+        .step-item {
+            display: flex;
+            align-items: center;
+            padding: 0.75rem 0.5rem;
+            margin-bottom: 0.5rem;
+            border-radius: 0.5rem;
+            transition: background-color 0.2s;
+        }
+
+        .step-item.active {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .step-circle {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 2rem;
+            height: 2rem;
+            border-radius: 50%;
+            background-color: #6c757d;
+            color: white;
+            font-weight: bold;
+            margin-right: 1rem;
+        }
+
+        .step-item.active .step-circle {
+            background-color: #ffc107;
+            color: #212529;
+        }
+
+        .step-text {
+            font-size: 0.9rem;
+        }
+
+        /* Main content styling */
+        .main-content {
+            padding: 2rem;
+        }
+
+        .step-header {
+            color: #4a5568;
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .page-title {
+            color: #2d3748;
+            font-size: 1.75rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .card {
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            margin-bottom: 24px;
+            border: none;
+        }
+
+        /* Facility & subsidiary styling */
+        .objective-box {
+            background-color: #f8f9fa;
+            border-left: 4px solid #ffc107;
+            padding: 1rem;
+            margin-bottom: 1.5rem;
+            color: #495057;
+        }
+
+        .objective-box i {
+            color: #ffc107;
+            font-size: 1.5rem;
+            margin-right: 1rem;
+        }
+
+        .info-card {
+            padding: 1.5rem;
+            height: 100%;
+        }
+
+        .info-card h5 {
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            color: #2d3748;
+        }
+
+        .info-card h5 img, 
+        .info-card h5 i {
+            margin-right: 0.75rem;
+        }
+
+        .info-card ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .info-card li {
+            margin-bottom: 0.5rem;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        .info-card li i {
+            position: absolute;
+            left: 0;
+            top: 0.25rem;
+            color: #0d6efd;
+        }
+
+        .hierarchy-tree {
+            border: 1px solid #dee2e6;
+            border-radius: 8px;
+            padding: 1rem;
+        }
+
+        .entity-item {
+            padding: 0.75rem;
+            border-radius: 4px;
+            margin-bottom: 0.5rem;
+            background-color: #f8f9fa;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .entity-icon {
+            margin-right: 0.75rem;
+            font-size: 1.2rem;
+        }
+
+        .entity-name {
+            font-weight: 500;
+        }
+
+        .entity-code {
+            color: #6c757d;
+            font-size: 0.9rem;
+            font-family: monospace;
+            margin-left: 0.5rem;
+        }
+
+        .entity-type {
+            background-color: #e9ecef;
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            margin: 0 0.5rem;
+        }
+
+        .entity-scope {
+            font-size: 0.8rem;
+            color: #6c757d;
+        }
+
+        .ownership-badge {
+            background-color: #198754;
+            color: white;
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+        }
+
+        .partial-ownership {
+            background-color: #fd7e14;
+        }
+
+        /* Workflow styling */
+        .workflow-container {
+            background-color: #fff;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .workflow-header {
+            margin-bottom: 1.5rem;
+            color: #212529;
+        }
+
+        .workflow-step {
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            border-left: 4px solid #ffc107;
+        }
+
+        .workflow-step-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 2rem;
+            height: 2rem;
+            border-radius: 50%;
+            background-color: #ffc107;
+            color: #212529;
+            font-weight: bold;
+            margin-right: 0.75rem;
+        }
+
+        .entity-type-selector {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .entity-type-option {
+            flex: 1;
+            padding: 1rem;
+            border: 1px solid #dee2e6;
+            border-radius: 8px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .entity-type-option:hover {
+            background-color: #f8f9fa;
+            border-color: #ced4da;
+        }
+
+        .entity-type-option i {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: #6c757d;
+        }
+
+        .entity-type-option.selected {
+            background-color: #e9f5ff;
+            border-color: #0d6efd;
+        }
+
+        .entity-type-option.selected i {
+            color: #0d6efd;
+        }
+
+        /* Form styling */
+        .form-section {
+            margin-bottom: 2rem;
+        }
+
+        .form-section-title {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+            font-weight: 500;
+        }
+
+        .form-section-title i {
+            color: #ffc107;
+            margin-right: 0.5rem;
+        }
+
+        .form-control {
+            padding: 0.5rem 0.75rem;
+        }
+
+        .form-label {
+            color: #495057;
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+
+        .form-text {
+            font-size: 0.8rem;
+            color: #6c757d;
+        }
+
+        /* Button styling */
+        .btn-primary {
+            background-color: #0d6efd;
+            border-color: #0d6efd;
+        }
+
+        .btn-warning {
+            background-color: #ffc107;
+            border-color: #ffc107;
+            color: #212529;
+        }
+        
+        .btn-outline-secondary {
+            color: #6c757d;
+            border-color: #6c757d;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .sidebar {
+                min-height: auto;
+            }
+            
+            .step-text {
+                font-size: 0.8rem;
+            }
+        }
+    </style>
+</head>
+<body class="bg-light">
+    <div class="container-fluid p-0">
+        <div class="row g-0">
+            <!-- Left sidebar navigation -->
+            <div class="col-md-3 col-lg-2 sidebar text-white py-4">
+                <h4 class="ps-3 pb-3"><i class="bi bi-check-square me-2"></i> ComplianceCheck</h4>
+                <h5 class="ps-3 pb-3">Compliance Review</h5>
+                
+                <div class="sidebar-steps">
+                    <div class="step-item">
+                        <div class="step-circle">1</div>
+                        <div class="step-text">Welcome & Overview</div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-circle">2</div>
+                        <div class="step-text">Corporate Master Record Setup</div>
+                    </div>
+                    <div class="step-item active">
+                        <div class="step-circle">3</div>
+                        <div class="step-text">Entity Hierarchy & Sub-Records Creation</div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-circle">4</div>
+                        <div class="step-text">Data Source & Calculation Setup</div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-circle">5</div>
+                        <div class="step-text">Renewable Energy & Offsets Configuration</div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-circle">6</div>
+                        <div class="step-text">Verification, Data Quality, & Uncertainty</div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-circle">7</div>
+                        <div class="step-text">Integration Setup for ERP & External Data Sources</div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-circle">8</div>
+                        <div class="step-text">Final Review & Approval</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Main content area -->
+            <div class="col-md-9 col-lg-10 main-content px-4 py-4">
+                <div class="step-header">
+                    Step 3 of 8
+                </div>
+                
+                <h2 class="page-title">Entity Hierarchy & Sub-Records Creation</h2>
+                
+                <!-- Facility & Subsidiary setup section -->
+                <div class="card mb-4">
+                    <div class="card-body p-4">
+                        <h3 class="mb-4">Facility & Subsidiary Record Setup</h3>
+                        
+                        <div class="objective-box d-flex align-items-center">
+                            <i class="bi bi-bullseye"></i>
+                            <div>
+                                <h5 class="mb-1">Objective</h5>
+                                <p class="mb-0">Create a detailed <a href="#" class="text-primary">hierarchical structure</a> by adding sub-records for each facility, subsidiary, or <a href="#" class="text-primary">joint venture</a>. This structure should clearly link every operational unit to the corporate master record.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="row g-4">
+                            <!-- Facility Records -->
+                            <div class="col-md-4">
+                                <div class="card info-card h-100">
+                                    <h5><i class="bi bi-building text-primary"></i> Facility Records</h5>
+                                    <p>Each facility (e.g. UK-REF-001, US-PR-001) will have its own dedicated data record capturing specific operational details:</p>
+                                    <ul>
+                                        <li><i class="bi bi-tag"></i> Unique facility identifiers</li>
+                                        <li><i class="bi bi-sliders"></i> Operational parameters</li>
+                                        <li><i class="bi bi-lightning"></i> Energy consumption data</li>
+                                        <li><i class="bi bi-cloud"></i> Emission factors</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <!-- Hierarchical Structure -->
+                            <div class="col-md-4">
+                                <div class="card info-card h-100">
+                                    <h5><i class="bi bi-diagram-3 text-primary"></i> Hierarchical Structure</h5>
+                                    <p>Clear parent-child relationships between corporate entities and operational facilities:</p>
+                                    <ul>
+                                        <li><i class="bi bi-people"></i> Ownership details</li>
+                                        <li><i class="bi bi-border-all"></i> Boundary specifications</li>
+                                        <li><i class="bi bi-graph-up"></i> Reporting relationships</li>
+                                        <li><i class="bi bi-shield-check"></i> Control approach</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <!-- Dynamic Organization Tree -->
+                            <div class="col-md-4">
+                                <div class="card info-card h-100">
+                                    <h5><i class="bi bi-diagram-2 text-primary"></i> Dynamic Organization Tree</h5>
+                                    <p>Visual representation of your company's operational structure:</p>
+                                    <ul>
+                                        <li><i class="bi bi-arrows-move"></i> Interactive hierarchy tree</li>
+                                        <li><i class="bi bi-building-fill-check"></i> Facility groupings</li>
+                                        <li><i class="bi bi-building-fill-gear"></i> Subsidiary relationships</li>
+                                        <li><i class="bi bi-link-45deg"></i> Joint venture links</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Organizational Hierarchy -->
+                <div class="card mb-4">
+                    <div class="card-body p-4">
+                        <h3 class="mb-4">Organizational Hierarchy</h3>
+                        
+                        <div class="hierarchy-tree">
+                            <div class="entity-item">
+                                <div class="d-flex align-items-center">
+                                    <i class="bi bi-building text-primary entity-icon"></i>
+                                    <div>
+                                        <span class="entity-name">Shell UK HQ Office</span>
+                                        <span class="entity-code">UK-CH-001</span>
+                                    </div>
+                                </div>
+                                <div>
+                                    <span class="entity-type">Office</span>
+                                    <span class="entity-scope">Location: London, UK</span>
+                                    <span class="ownership-badge">100% Owned</span>
+                                </div>
+                            </div>
+                            
+                            <div class="entity-item ms-4">
+                                <div class="d-flex align-items-center">
+                                    <i class="bi bi-building-fill-gear text-primary entity-icon"></i>
+                                    <div>
+                                        <span class="entity-name">Shell Fawley Refinery</span>
+                                        <span class="entity-code">UK-REF-001</span>
+                                    </div>
+                                </div>
+                                <div>
+                                    <span class="entity-type">Refinery</span>
+                                    <span class="entity-scope">Scope: 1, 2, 3</span>
+                                    <span class="ownership-badge">100% Owned</span>
+                                </div>
+                            </div>
+                            
+                            <div class="entity-item ms-4">
+                                <div class="d-flex align-items-center">
+                                    <i class="bi bi-gear-wide-connected text-primary entity-icon"></i>
+                                    <div>
+                                        <span class="entity-name">Shell UK Offshore Drilling Site</span>
+                                        <span class="entity-code">UK-ODS-001</span>
+                                    </div>
+                                </div>
+                                <div>
+                                    <span class="entity-type">Drilling/Production</span>
+                                    <span class="entity-scope">Scope: 1, 2</span>
+                                    <span class="ownership-badge">100% Owned</span>
+                                </div>
+                            </div>
+                            
+                            <div class="entity-item ms-4">
+                                <div class="d-flex align-items-center">
+                                    <i class="bi bi-building-fill text-primary entity-icon"></i>
+                                    <div>
+                                        <span class="entity-name">Shell UK Subsidiary - Energy Trading</span>
+                                        <span class="entity-code">UK-SUB-001</span>
+                                    </div>
+                                </div>
+                                <div>
+                                    <span class="entity-type">Office/Trading</span>
+                                    <span class="ownership-badge partial-ownership">90% Owned</span>
+                                </div>
+                            </div>
+                            
+                            <div class="entity-item ms-4">
+                                <div class="d-flex align-items-center">
+                                    <i class="bi bi-diagram-3 text-primary entity-icon"></i>
+                                    <div>
+                                        <span class="entity-name">Shell UK Joint Venture - Integrated Oil & Gas Ops</span>
+                                        <span class="entity-code">UK-JV-001</span>
+                                    </div>
+                                </div>
+                                <div>
+                                    <span class="entity-type">Integrated Operation</span>
+                                    <span class="ownership-badge partial-ownership">60% Owned</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Guided Workflow for Creating Facility Sub-Records -->
+                <div class="card mb-4">
+                    <div class="card-body p-4">
+                        <h3 class="mb-4">Guided Workflow for Creating Facility Sub-Records</h3>
+                        
+                        <div class="workflow-container">
+                            <!-- Step 1: Select Entity Type -->
+                            <div class="workflow-step">
+                                <h5 class="mb-3">
+                                    <span class="workflow-step-number">1</span>
+                                    Select Entity Type
+                                </h5>
+                                
+                                <div class="entity-type-selector">
+                                    <div class="entity-type-option selected">
+                                        <i class="bi bi-building"></i>
+                                        <div>Owned Facility</div>
+                                    </div>
+                                    <div class="entity-type-option">
+                                        <i class="bi bi-buildings"></i>
+                                        <div>Subsidiary</div>
+                                    </div>
+                                    <div class="entity-type-option">
+                                        <i class="bi bi-people"></i>
+                                        <div>Joint Venture</div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Step 2: Basic Details -->
+                            <div class="workflow-step">
+                                <h5 class="mb-3">
+                                    <span class="workflow-step-number">2</span>
+                                    Basic Details
+                                </h5>
+                                
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <label for="entityId" class="form-label">Entity/Facility ID</label>
+                                        <input type="text" class="form-control" id="entityId" value="UK-REF-001">
+                                        <div class="form-text">Enter a unique identifier</div>
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label for="entityName" class="form-label">Entity/Facility Name</label>
+                                        <input type="text" class="form-control" id="entityName" value="Shell UK Refinery - Fawley">
+                                    </div>
+                                </div>
+                                
+                                <div class="mb-3">
+                                    <label for="entityDescription" class="form-label">Entity Description</label>
+                                    <textarea class="form-control" id="entityDescription" rows="3">A major refining facility located in the UK responsible for processing crude oil.</textarea>
+                                </div>
+                            </div>
+                            
+                            <!-- Step 3: Ownership & Boundary Details -->
+                            <div class="workflow-step">
+                                <h5 class="mb-3">
+                                    <span class="workflow-step-number">3</span>
+                                    Ownership & Boundary Details
+                                </h5>
+                                
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <label for="acquisitionDate" class="form-label">Acquisition Date</label>
+                                        <input type="text" class="form-control" id="acquisitionDate" value="01-01-2020">
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label for="ownershipPercentage" class="form-label">Ownership Percentage</label>
+                                        <input type="text" class="form-control" id="ownershipPercentage" value="100%">
+                                    </div>
+                                </div>
+                                
+                                <div class="form-check mb-3">
+                                    <input class="form-check-input" type="checkbox" id="boundaryChange" checked>
+                                    <label class="form-check-label" for="boundaryChange">
+                                        Boundary Change Indicator
+                                    </label>
+                                </div>
+                            </div>
+                            
+                            <!-- Step 4: Operational & Capacity Data -->
+                            <div class="workflow-step">
+                                <h5 class="mb-3">
+                                    <span class="workflow-step-number">4</span>
+                                    Operational & Capacity Data
+                                </h5>
+                                
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <label for="facilityArea" class="form-label">Facility Area/Capacity</label>
+                                        <input type="text" class="form-control" id="facilityArea" value="1,500 m²; 200,000 barrels/day">
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label for="operatingHours" class="form-label">Operating Hours</label>
+                                        <input type="text" class="form-control" id="operatingHours" value="8760 hours/year">
+                                    </div>
+                                </div>
+                                
+                                <div class="mb-3">
+                                    <label for="operationalParameters" class="form-label">Key Operational Parameters</label>
+                                    <textarea class="form-control" id="operationalParameters" rows="3">Production capacity: 200,000 barrels/day
+Storage capacity: 1.5 million barrels
+Processing units: 8 major units</textarea>
+                                </div>
+                            </div>
+                            
+                            <!-- Step 5: Energy & Emission Data -->
+                            <div class="workflow-step">
+                                <h5 class="mb-3">
+                                    <span class="workflow-step-number">5</span>
+                                    Energy & Emission Data
+                                </h5>
+                                
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <label for="energyConsumption" class="form-label">Energy Consumption</label>
+                                        <input type="text" class="form-control" id="energyConsumption" value="Electricity: 33,500,000 kWh/year">
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label for="emissionFactors" class="form-label">Emission Factors</label>
+                                        <input type="text" class="form-control" id="emissionFactors" value="0.00023 tCO₂e/kWh - DEFRA">
+                                    </div>
+                                </div>
+                                
+                                <div class="row">
+                                    <div class="col-md-12 mb-3">
+                                        <label for="dataSourceType" class="form-label">Data Source Type</label>
+                                        <select class="form-select" id="dataSourceType">
+                                            <option>Activity-based (with bills)</option>
+                                            <option>Estimated based on area</option>
+                                            <option>Measured/metered</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Step 6: Renewable & Offset Data -->
+                            <div class="workflow-step">
+                                <h5 class="mb-3">
+                                    <span class="workflow-step-number">6</span>
+                                    Renewable & Offset Data
+                                </h5>
+                                
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <label for="recsDetails" class="form-label">RECs/PPA Details</label>
+                                        <textarea class="form-control" id="recsDetails" rows="3">Green tariff: 25% of total consumption
+REC volume: 8,375,000 kWh</textarea>
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label for="offsetCredits" class="form-label">Offset Credits</label>
+                                        <textarea class="form-control" id="offsetCredits" rows="3">Carbon credits: 15,000 tCO₂e
+Project: UK Woodland Carbon Code</textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="d-flex justify-content-end">
+                            <button type="button" class="btn btn-outline-secondary me-2">Save as Draft</button>
+                            <a href="/data-source-setup" class="btn btn-warning">Confirm & Continue</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Handle entity type selection
+            const entityTypeOptions = document.querySelectorAll('.entity-type-option');
+            entityTypeOptions.forEach(option => {
+                option.addEventListener('click', function() {
+                    // Remove selected class from all options
+                    entityTypeOptions.forEach(opt => opt.classList.remove('selected'));
+                    // Add selected class to clicked option
+                    this.classList.add('selected');
+                });
+            });
+        });
+    </script>
+</body>
+</html> 

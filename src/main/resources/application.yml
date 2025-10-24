@@ -1,0 +1,29 @@
+# https://docs.spring.io/spring-boot/docs/current/reference/html/appendix-application-properties.html#common-application-properties-data
+logging:
+  level:
+    liquibase: info
+spring:
+  application:
+    name: carbon-tracker
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/dev-carbon-tracker
+  # Thymeleaf configuration
+  thymeleaf:
+    cache: false
+    prefix: classpath:/templates/
+    suffix: .html
+    mode: HTML
+    encoding: UTF-8
+
+# OpenAPI configuration
+springdoc:
+  api-docs:
+    path: /api-docs
+  swagger-ui:
+    path: /swagger-ui.html
+    operationsSorter: method
+    tagsSorter: alpha
+    disable-swagger-default-url: true
+  paths-to-match:
+    - /api/v1/**
