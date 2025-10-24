@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carbon Tracker - Integration Setup</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/onboarding.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌿</text></svg>">
+    <style>
+        .integration-card {
+            border-left: 4px solid #2b5a87;
+            height: 100%;
+        }
+
+        .connection-status {
+            font-size: 0.85rem;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            padding: 0.25rem 0.6rem;
+            border-radius: 999px;
+        }
+
+        .status-active {
+            background-color: rgba(127, 176, 105, 0.15);
+            color: #3f6d34;
+        }
+
+        .status-pending {
+            background-color: rgba(255, 193, 7, 0.15);
+            color: #9a7200;
+        }
+
+        .mapping-table td:first-child {
+            font-weight: 600;
+            width: 35%;
+        }
+    </style>
+</head>
+<body class="bg-light">
+    <header class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid px-4">
+            <a class="navbar-brand" href="/dashboard">ComplianceCheck</a>
+            <div class="d-flex">
+                <a class="btn btn-outline-light btn-sm" href="/logout">Sign Out</a>
+            </div>
+        </div>
+    </header>
+    <div class="container-fluid p-0">
+        <div class="row g-0">
+            <!-- Left sidebar navigation -->
+            <div class="col-md-3 col-lg-2 sidebar text-white py-4">
+                <h4 class="ps-3 pb-3"><i class="bi bi-check-square me-2"></i> ComplianceCheck</h4>
+                <h5 class="ps-3 pb-3">Compliance Review</h5>
+
+                <div class="sidebar-steps">
+                    <div class="step-item">
+                        <div class="step-circle">1</div>
+                        <div class="step-text">Welcome & Overview</div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-circle">2</div>
+                        <div class="step-text">Corporate Master Record Setup</div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-circle">3</div>
+                        <div class="step-text">Entity Hierarchy & Sub-Records Creation</div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-circle">4</div>
+                        <div class="step-text">Data Source & Calculation Setup</div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-circle">5</div>
+                        <div class="step-text">Renewable Energy & Offsets Configuration</div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-circle">6</div>
+                        <div class="step-text">Verification, Data Quality, & Uncertainty</div>
+                    </div>
+                    <div class="step-item active">
+                        <div class="step-circle">7</div>
+                        <div class="step-text">Integration Setup for ERP & External Data Sources</div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-circle">8</div>
+                        <div class="step-text">Final Review & Approval</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Main content area -->
+            <div class="col-md-9 col-lg-10 main-content px-4 py-4">
+                <div class="progress-header mb-4">
+                    <h6>Step 7 of 8: Integration Setup for ERP & External Data Sources</h6>
+                </div>
+
+                <div class="d-flex align-items-center justify-content-between mb-4">
+                    <h2 class="mb-0">Integration Setup</h2>
+                    <span class="badge bg-primary bg-opacity-25 text-primary fs-6"><i class="bi bi-diagram-3 me-2"></i>Connect your ecosystem</span>
+                </div>
+
+                <div class="alert alert-info d-flex align-items-center" th:if="${onboardingProgress.integration} != null">
+                    <i class="bi bi-diagram-3 fs-4 me-3 text-primary"></i>
+                    <div>
+                        <div class="fw-semibold">Integration plan saved for <span th:text="${accountId}">demo-account</span></div>
+                        <div class="small text-muted">
+                            ERP: <span th:text="${onboardingProgress.integration.erpSystem}">SAP S/4HANA</span> · Owner: <span th:text="${onboardingProgress.integration.integrationOwner}">IT Systems Manager</span>
+                        </div>
+                    </div>
+                </div>
+
+                <form class="card shadow-sm mb-4" th:action="@{/integration-setup}" th:object="${integrationSetupForm}" method="post">
+                    <div class="card-body p-4">
+                        <h4 class="mb-3"><i class="bi bi-plug me-2 text-primary"></i> Integration Program Overview</h4>
+                        <p class="text-muted">Capture the systems that require connectivity, who owns each integration, and how often data should flow into the platform.</p>
+
+                        <input type="hidden" th:field="*{accountId}" th:value="${accountId}">
+
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <label class="form-label">Primary ERP platform</label>
+                                <select class="form-select" th:field="*{erpSystem}">
+                                    <option value="">Select a platform</option>
+                                    <option value="SAP S/4HANA">SAP S/4HANA</option>
+                                    <option value="Oracle NetSuite">Oracle NetSuite</option>
+                                    <option value="Microsoft Dynamics 365">Microsoft Dynamics 365</option>
+                                    <option value="Workday Financials">Workday Financials</option>
+                                </select>
+                            </div>
+                            <div class="col-md-3">
+                                <label class="form-label">Data refresh cadence</label>
+                                <select class="form-select" th:field="*{dataRefreshFrequency}">
+                                    <option value="">Select cadence</option>
+                                    <option value="Real-time">Real-time</option>
+                                    <option value="Hourly">Hourly</option>
+                                    <option value="Nightly">Nightly</option>
+                                    <option value="Weekly">Weekly</option>
+                                </select>
+                            </div>
+                            <div class="col-md-3">
+                                <label class="form-label">Automation priority</label>
+                                <select class="form-select" th:field="*{dataAutomationPriority}">
+                                    <option value="">Select priority</option>
+                                    <option value="High">High</option>
+                                    <option value="Medium">Medium</option>
+                                    <option value="Low">Low</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="row g-3 mt-3">
+                            <div class="col-md-6">
+                                <label class="form-label">Integration owner</label>
+                                <input type="text" class="form-control" placeholder="e.g. IT Systems Manager" th:field="*{integrationOwner}">
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">Notes</label>
+                                <textarea class="form-control" rows="2" placeholder="Document any dependencies or sequencing assumptions."></textarea>
+                            </div>
+                        </div>
+
+                        <div class="d-flex justify-content-end mt-4">
+                            <button class="btn btn-primary" type="submit"><i class="bi bi-save me-2"></i>Save Integration Plan</button>
+                        </div>
+                    </div>
+                </form>
+
+                <div class="d-flex justify-content-between align-items-center mt-4">
+                    <a th:href="@{/verification(accountId=${accountId})}" class="btn btn-outline-secondary"><i class="bi bi-arrow-left me-2"></i>Back to Step 6</a>
+                    <a th:href="@{/final-review(accountId=${accountId})}" class="btn btn-warning">Continue to Step 8<i class="bi bi-arrow-right ms-2"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

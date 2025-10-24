@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carbon Tracker - Final Review & Approval</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/onboarding.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌿</text></svg>">
+    <style>
+        .review-card {
+            border-left: 4px solid #2b5a87;
+        }
+
+        .approval-status {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.4rem 0.75rem;
+            border-radius: 999px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            background: rgba(127, 176, 105, 0.15);
+            color: #3f6d34;
+        }
+
+        .timeline-step {
+            position: relative;
+            padding-left: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .timeline-step::before {
+            content: '';
+            position: absolute;
+            left: 0.65rem;
+            top: 0.2rem;
+            width: 0.6rem;
+            height: 0.6rem;
+            background-color: #ffc107;
+            border-radius: 50%;
+        }
+
+        .timeline-step::after {
+            content: '';
+            position: absolute;
+            left: 0.9rem;
+            top: 0.8rem;
+            width: 2px;
+            height: calc(100% - 0.8rem);
+            background-color: #dee2e6;
+        }
+
+        .timeline-step:last-child::after {
+            display: none;
+        }
+    </style>
+</head>
+<body class="bg-light">
+    <header class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid px-4">
+            <a class="navbar-brand" href="/dashboard">ComplianceCheck</a>
+            <div class="d-flex">
+                <a class="btn btn-outline-light btn-sm" href="/logout">Sign Out</a>
+            </div>
+        </div>
+    </header>
+    <div class="container-fluid p-0">
+        <div class="row g-0">
+            <!-- Left sidebar navigation -->
+            <div class="col-md-3 col-lg-2 sidebar text-white py-4">
+                <h4 class="ps-3 pb-3"><i class="bi bi-check-square me-2"></i> ComplianceCheck</h4>
+                <h5 class="ps-3 pb-3">Compliance Review</h5>
+
+                <div class="sidebar-steps">
+                    <div class="step-item">
+                        <div class="step-circle">1</div>
+                        <div class="step-text">Welcome & Overview</div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-circle">2</div>
+                        <div class="step-text">Corporate Master Record Setup</div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-circle">3</div>
+                        <div class="step-text">Entity Hierarchy & Sub-Records Creation</div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-circle">4</div>
+                        <div class="step-text">Data Source & Calculation Setup</div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-circle">5</div>
+                        <div class="step-text">Renewable Energy & Offsets Configuration</div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-circle">6</div>
+                        <div class="step-text">Verification, Data Quality, & Uncertainty</div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-circle">7</div>
+                        <div class="step-text">Integration Setup for ERP & External Data Sources</div>
+                    </div>
+                    <div class="step-item active">
+                        <div class="step-circle">8</div>
+                        <div class="step-text">Final Review & Approval</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Main content area -->
+            <div class="col-md-9 col-lg-10 main-content px-4 py-4">
+                <div class="progress-header mb-4">
+                    <h6>Step 8 of 8: Final Review & Approval</h6>
+                </div>
+
+                <div class="d-flex align-items-center justify-content-between mb-4">
+                    <h2 class="mb-0">Final Review & Approval</h2>
+                    <span class="approval-status"><i class="bi bi-patch-check-fill me-2"></i>Ready for executive sign-off</span>
+                </div>
+
+                <div class="alert alert-info d-flex align-items-center" th:if="${onboardingProgress.finalReview} != null">
+                    <i class="bi bi-flag fs-4 me-3 text-primary"></i>
+                    <div>
+                        <div class="fw-semibold">Final review captured for <span th:text="${accountId}">demo-account</span></div>
+                        <div class="small text-muted">
+                            Executive sponsor <span th:text="${onboardingProgress.finalReview.executiveSponsor}">Executive Sponsor</span> · Target go-live <span th:text="${onboardingProgress.finalReview.targetGoLive}">2024-12-31</span>
+                        </div>
+                    </div>
+                </div>
+
+                <form th:action="@{/final-review}" th:object="${finalReviewForm}" method="post">
+                    <div class="card review-card shadow-sm mb-4">
+                        <div class="card-body p-4">
+                            <h4 class="mb-3"><i class="bi bi-clipboard-data me-2 text-primary"></i> Onboarding Summary</h4>
+                            <p class="text-muted">Confirm the accuracy of each onboarding module before submitting for approval.</p>
+
+                            <input type="hidden" th:field="*{accountId}" th:value="${accountId}">
+
+                            <div class="row g-4">
+                                <div class="col-md-6">
+                                    <h6 class="text-uppercase text-muted">Core profile</h6>
+                                    <ul class="list-unstyled">
+                                        <li><i class="bi bi-check-circle-fill text-success me-2"></i>Corporate master data validated</li>
+                                        <li><i class="bi bi-check-circle-fill text-success me-2"></i>Entity hierarchy published</li>
+                                        <li><i class="bi bi-check-circle-fill text-success me-2"></i>Data sources configured</li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-6">
+                                    <h6 class="text-uppercase text-muted">Carbon strategy</h6>
+                                    <ul class="list-unstyled">
+                                        <li><i class="bi bi-check-circle-fill text-success me-2"></i>Renewables & offsets targets set</li>
+                                        <li><i class="bi bi-check-circle-fill text-success me-2"></i>Verification controls documented</li>
+                                        <li><i class="bi bi-check-circle-fill text-success me-2"></i>Integrations mapped</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="row g-3 mt-4">
+                                <div class="col-md-4">
+                                    <label class="form-label">Executive sponsor</label>
+                                    <input type="text" class="form-control" placeholder="e.g. Chief Sustainability Officer" th:field="*{executiveSponsor}">
+                                </div>
+                                <div class="col-md-4">
+                                    <label class="form-label">Target go-live date</label>
+                                    <input type="date" class="form-control" th:field="*{targetGoLive}">
+                                </div>
+                                <div class="col-md-4">
+                                    <label class="form-label">Outstanding risks</label>
+                                    <input type="text" class="form-control" placeholder="Summarize any remaining risks" th:field="*{outstandingRisks}">
+                                </div>
+                            </div>
+
+                            <div class="mt-4">
+                                <label class="form-label">Executive summary & next steps</label>
+                                <textarea class="form-control" rows="4" placeholder="Highlight key milestones, residual risks, and launch recommendations." th:field="*{nextSteps}"></textarea>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="d-flex justify-content-end mb-4">
+                        <button class="btn btn-primary" type="submit"><i class="bi bi-save me-2"></i>Save Final Review</button>
+                    </div>
+                </form>
+
+                <div class="d-flex justify-content-between align-items-center mt-4">
+                    <a th:href="@{/integration-setup(accountId=${accountId})}" class="btn btn-outline-secondary"><i class="bi bi-arrow-left me-2"></i>Back to Step 7</a>
+                    <div class="d-flex gap-2">
+                        <button class="btn btn-outline-primary" type="button"><i class="bi bi-file-earmark-text me-2"></i>Download summary PDF</button>
+                        <a th:href="@{/dashboard(accountId=${accountId})}" class="btn btn-success"><i class="bi bi-check-lg me-2"></i>Complete Onboarding</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
